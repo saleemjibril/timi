@@ -1,0 +1,49 @@
+.hero {
+    width: 100%;
+    background: #000000;
+
+    &__inner {
+        width: 100%;
+        max-width: 1352px;
+        margin: 0 auto;
+        padding: 157px 20px 0 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+
+        &__title {
+            @extend %title-48;
+            width: 100%;
+            max-width: 30ch;
+            font-weight: 600;
+            text-align: center;
+            // margin: 0 auto;
+            margin-bottom: 10px;
+        }
+
+        &__subtitle {
+            @extend %title-22;
+            font-weight: 500;
+            text-align: center;
+            width: 100%;
+            max-width: 70ch;
+            margin-bottom: 16px;
+            // margin: 0 auto;
+        }
+
+        & > button {
+            @extend %primary-button;
+            font-family: var(--font-playfair-display);
+            margin-bottom: 32px;
+        }
+
+        &__image {
+            width: 100%;
+            max-width: 1206px;
+            height: auto;
+            margin-bottom: 48px;
+        }
+    }
+}

@@ -1,0 +1,17 @@
+.project-overview {
+    width: 100%;
+    max-width: 1352px;
+    padding: 0 20px;
+    margin: 0 auto;
+    padding-bottom: 82px;
+
+    &__title {
+        @extend %title-48;
+        font-weight: 500;
+        margin-bottom: 16px;
+    }
+    &__subtitle {
+        @extend %title-22;
+        font-weight: 400;
+    }
+}

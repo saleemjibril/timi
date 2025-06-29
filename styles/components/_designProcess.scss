@@ -1,0 +1,51 @@
+.design-process {
+    width: 100%;
+    background: #282828;
+    padding: 82px 0;
+
+
+    &__inner {
+        width: 100%;
+        max-width: 1352px;
+        padding: 0 20px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1.546fr;
+        gap: 39px;
+        // background: yellow;
+
+        &__image {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            // background: pink;
+
+
+            // & > img {
+
+            // }
+        }
+
+        &__card {
+            height: fit-content;
+            // background: blue;
+            &__title {
+                @extend %title-48;
+            font-weight: 500;
+            margin-bottom: 16px;
+            }
+            &__subtitle {
+                @extend %title-22;
+                margin-bottom: 24px;
+            }
+
+            & > button {
+                @extend %primary-button;
+                background: #000000;
+                color: #fff;
+                font-family: var(--font-playfair-display);
+            }
+        }
+
+    }
+}
