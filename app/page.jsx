@@ -1,6 +1,8 @@
 import DesignProcess from "./components/designProcess";
 import Hero from "./components/hero";
 import ProjectOverview from "./components/projectOverview";
+import Sketching from "./components/sketching";
+import UserResearch from "./components/userResearch";
 
 export async function generateMetadata() {
   return {
@@ -17,6 +19,8 @@ export default function Home() {
     <Hero />
     <ProjectOverview />
     <DesignProcess />
+    <UserResearch />
+    <Sketching />
     </>
   );
 }

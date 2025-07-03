@@ -1,0 +1,40 @@
+.user-research {
+    width: 100%;
+    background: #282828;
+    
+
+    &__inner {
+        width: 100%;
+        max-width: 1352px;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 0 auto;
+
+    &__card {
+        padding: 32px 24px;
+        // height: 359px;
+        // padding-top: 32px;
+        &__title {
+            @extend %title-24;
+            font-weight: 500;
+            margin-bottom: 16px;
+        }
+        &__subtitle {
+            @extend %title-18;
+            font-weight: 400;
+        }
+
+        &:first-child {
+            background: #FFF;
+            color: #000 !important;
+        }
+        &:last-child {
+            background: #282828;
+            color: #FFF !important;
+        }
+    }
+    }
+
+    
+}
