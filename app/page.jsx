@@ -1,8 +1,13 @@
 import DesignProcess from "./components/designProcess";
 import Hero from "./components/hero";
 import ProjectOverview from "./components/projectOverview";
-import Sketching from "./components/sketching";
+import LowFidelity from "./components/lowFidelity";
 import UserResearch from "./components/userResearch";
+import HighFidelity from "./components/highFidelity";
+import Achievements from "./components/achievements";
+import StyleGuide from "./components/styleGuide";
+import HireMe from "./components/hireMe";
+import Footer from "./components/footer";
 
 export async function generateMetadata() {
   return {
@@ -20,7 +25,12 @@ export default function Home() {
     <ProjectOverview />
     <DesignProcess />
     <UserResearch />
-    <Sketching />
+    <LowFidelity />
+    <HighFidelity />
+    <Achievements />
+    <StyleGuide />
+    <HireMe />
+    <Footer />
     </>
   );
 }

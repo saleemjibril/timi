@@ -1,0 +1,77 @@
+.achievements {
+    background: #282828;
+
+    &__inner {
+        width: 100%;
+        max-width: 1352px;
+        margin: 0 auto;
+        padding: 82px 20px;
+
+        &__title-group {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+
+            & >:first-child {
+                @extend %title-48;
+                font-weight: 500;
+            }
+            & >:last-child {
+                @extend %title-22;
+                font-weight: 400;
+
+                & >:first-child {
+                    width: 100%;
+                    max-width: 60ch;
+                    margin-bottom: 24px;
+                }
+
+                & > button {
+                    @extend %primary-button;
+                    background: #1a1a1a;
+                    color: #fff;
+                    font-family: var(--font-playfair-display);
+                }
+            }
+        }
+
+        &__metrics {
+            &__title {
+                @extend %title-22;
+                font-weight: 400;
+                margin-bottom: 16px;
+            }
+
+            &__grid {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 20px;
+                background: #1A1A1A;
+                padding: 48px 98px;
+
+                &__divider {
+                    width: 1px;
+                    height: 113px;
+                    background: #FAFAFA;
+                }
+
+                & > div {
+                    text-align: center;
+                   
+            & >:first-child {
+                @extend %title-48;
+                font-weight: 500;
+            } 
+
+            & >:last-child {
+                @extend %title-22;
+                font-weight: 400;}
+                }
+            }
+        }
+    
+    }
+}

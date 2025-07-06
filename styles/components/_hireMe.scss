@@ -1,0 +1,56 @@
+.hire-me {
+    background: #282828;
+
+    &__inner {
+        width: 100%;
+        max-width: 1352px;
+        margin: 0 auto;
+        padding: 82px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+
+        & > img {
+            border-radius: 50%;
+            margin-bottom: 24px;
+        }
+
+        &__title {
+            @extend %title-32;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+        &__subtitle {
+            @extend %title-24;
+            width: 100%;
+            max-width: 65ch;
+            font-weight: 400;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+
+        &__button-group {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+
+            & >:first-child {
+                @extend %primary-button;
+                font-family: var(--font-playfair-display);
+                margin-bottom: 74px;
+                padding: 0 22px;
+            }
+            & >:last-child {
+                @extend %primary-button;
+                background: #1a1a1a;
+                color: #fff;
+                font-family: var(--font-playfair-display);
+                margin-bottom: 74px;
+                padding: 0 22px;
+            }
+        }
+    }
+}

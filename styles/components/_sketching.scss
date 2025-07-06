@@ -18,7 +18,7 @@
 
     &__title-button {
         @extend %primary-button;
-        background: #1C1C1C;
+        background: #282828;
         color: #fff;
         font-family: var(--font-playfair-display);
         margin-bottom: 64px;
@@ -39,7 +39,7 @@ margin-bottom: 24px;
     }
 
     &__view {
-        background: #1C1C1C;
+        background: #282828;
         padding: 42px 64px;
         
         &__title {
@@ -48,10 +48,21 @@ margin-bottom: 24px;
             margin-bottom: 24px;
         }
 
+        &__subtitle {
+            @extend %title-22;
+            font-weight: 400;
+            margin-bottom: 32px;
+        }
+
         &__grid {
             display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         gap: 24px 32px;
+
+        & > img {
+            width: 100%;
+            height: auto;
+        }
         }
     }
 }

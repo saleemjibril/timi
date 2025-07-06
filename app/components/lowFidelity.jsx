@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export default function Sketching() {
+export default function LowFidelity() {
     return (
         <div className="sketching">
         <div className="sketching__title">
@@ -27,17 +27,17 @@ Built using insights from my initial research and user flows, these wireframes s
 
             <div className="sketching__view__grid">
             <Image src="/assets/view1.png" width={378.6700134277344} height={269.2764587402344} />
-            <Image src="/assets/view1.png" width={378.6700134277344} height={269.2764587402344} />
-            <Image src="/assets/view1.png" width={378.6700134277344} height={269.2764587402344} />
-            <Image src="/assets/view1.png" width={378.6700134277344} height={269.2764587402344} />
-            <Image src="/assets/view1.png" width={378.6700134277344} height={269.2764587402344} />
-            <Image src="/assets/view1.png" width={378.6700134277344} height={269.2764587402344} />
-            <Image src="/assets/view1.png" width={378.6700134277344} height={269.2764587402344} />
-            <Image src="/assets/view1.png" width={378.6700134277344} height={269.2764587402344} />
-            <Image src="/assets/view1.png" width={378.6700134277344} height={269.2764587402344} />
-            <Image src="/assets/view1.png" width={378.6700134277344} height={269.2764587402344} />
-            <Image src="/assets/view1.png" width={378.6700134277344} height={269.2764587402344} />
-            <Image src="/assets/view1.png" width={378.6700134277344} height={269.2764587402344} />
+            <Image src="/assets/view2.png" width={378.6700134277344} height={269.2764587402344} />
+            <Image src="/assets/view3.png" width={378.6700134277344} height={269.2764587402344} />
+            <Image src="/assets/view4.png" width={378.6700134277344} height={269.2764587402344} />
+            <Image src="/assets/view5.png" width={378.6700134277344} height={269.2764587402344} />
+            <Image src="/assets/view6.png" width={378.6700134277344} height={269.2764587402344} />
+            <Image src="/assets/view7.png" width={378.6700134277344} height={269.2764587402344} />
+            <Image src="/assets/view8.png" width={378.6700134277344} height={269.2764587402344} />
+            <Image src="/assets/view9.png" width={378.6700134277344} height={269.2764587402344} />
+            <Image src="/assets/view10.png" width={378.6700134277344} height={269.2764587402344} />
+            <Image src="/assets/view11.png" width={378.6700134277344} height={269.2764587402344} />
+            <Image src="/assets/view12.png" width={378.6700134277344} height={269.2764587402344} />
             </div>
         </div>
     </div>
