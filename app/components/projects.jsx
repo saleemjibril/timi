@@ -46,13 +46,13 @@ export default function Projects() {
     <div className="home__projects__card__card1__subtitle">
     DemiCare is an AI-powered skincare platform designed to help users track and improve their skin health over time. It serves as a digital tool that allows users to log their skincare routines, scan their face every 14 days, and receive AI-driven insights.        </div>
     
-        <div className="home__projects__card__card1__button">
+        <Link href="#" className="home__projects__card__card1__button">
         <button>
         View Project
       
      
                       </button>
-        </div>
+        </Link>
     
         </div>
     
@@ -71,13 +71,13 @@ export default function Projects() {
     <div className="home__projects__card__card1__subtitle">
     EazInvites is an end-to-end digital event invitation and management platform built to modernize how events are planned and experienced. It empowers event organizers, planners, and hosts to design stunning invitations, manage guest lists, track RSVPs, send reminders, and monitor real-time event performance, all from one centralized dashboard.       </div>
     
-        <div className="home__projects__card__card1__button">
+        <Link href="#" className="home__projects__card__card1__button">
         <button>
         View Project
       
      
                       </button>
-        </div>
+        </Link>
     
         </div>
     
