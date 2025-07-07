@@ -1,7 +1,14 @@
 import Image from "next/image";
 import HomeHero from "./components/homeHero";
 import Projects from "./components/projects";
-
+import DesignExploration from "./components/designExploration";
+import Me from "./components/me";
+import WorkTogether from "./components/workTogether";
+import DesignTools from "./components/designTools";
+import Gallery from "./components/gallery";
+import Hideout from "./components/hideout";
+import Faq from "./components/faq";
+import HomeHireMe from "./components/homeHireMe";
 
 export async function generateMetadata() {
   return {
@@ -17,6 +24,14 @@ export default function Home() {
     <div className="home">
      <HomeHero />
      <Projects />
+     <DesignExploration />
+     <Me />
+     <WorkTogether />
+     <DesignTools />
+     <Gallery />
+     <Hideout />
+     <Faq />
+     <HomeHireMe />
     </div>
   );
 }

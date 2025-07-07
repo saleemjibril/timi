@@ -1,0 +1,44 @@
+.home__faq {
+    width: 100%;
+    background: #282828;
+
+    &__inner {
+        width: 100%;
+    max-width: 1352px;
+    margin: 0 auto;
+    padding: 82px 20px;
+
+    &__title {
+        @extend %title-64;
+        font-weight: 600;
+        margin-bottom: 48px;
+        text-align: center;
+    }
+
+    &__card {
+        width: 100%;
+        max-width: 1190px;
+        margin: 0 auto;
+        padding: 24px 32px;
+        border-radius: 15px;
+        margin-bottom: 32px;
+        background: #FFFFFF;
+
+
+        &__title-group {
+            @extend %title-24;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: #000000;
+            margin-bottom: 24px;
+        }
+
+        &__subtitle {
+            @extend %title-18;
+            color: #737373;
+        }
+    }
+    }
+}

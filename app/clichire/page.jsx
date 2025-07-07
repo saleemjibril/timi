@@ -7,7 +7,6 @@ import HighFidelity from "../components/highFidelity";
 import Achievements from "../components/achievements";
 import StyleGuide from "../components/styleGuide";
 import HireMe from "../components/hireMe";
-import Footer from "../components/footer";
 
 export async function generateMetadata() {
   return {
@@ -30,7 +29,6 @@ export default function Home() {
     <Achievements />
     <StyleGuide />
     <HireMe />
-    <Footer />
     </>
   );
 }

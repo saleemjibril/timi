@@ -2,6 +2,7 @@ import "../styles/index.scss";
 import { Inter, Syne, Geist, Playfair_Display } from "next/font/google";
 import localFont from "next/font/local";
 import Header from "./components/header";
+import Footer from "./components/footer";
 
 // const silkFlower = localFont({
 //   src: "../public/assets/SilkFlower.woff2",
@@ -55,6 +56,7 @@ export default function RootLayout({ children }) {
       <body>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

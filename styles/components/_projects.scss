@@ -1,5 +1,8 @@
 .home__projects {
-    padding: 82px 0;
+    width: 100%;
+    max-width: 1352px;
+    margin: 0 auto;
+    padding: 82px 20px;
     &__title {
         @extend %title-48;
         font-weight: 500;

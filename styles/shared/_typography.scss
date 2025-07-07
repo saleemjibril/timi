@@ -1,8 +1,14 @@
+%title-64 {
+  font-size: 64px;
+  line-height: 140%;
+
+  // @media (max-width: 565px) {
+  //   font-size: 36px;
+  //   line-height: 48px;
+  // }
+}
 %title-60 {
-  font-size: 6rem;
-  font-weight: 800;
-  color: #fff;
-  font-family: var(--font-ojuju);
+  font-size: 60px;
   line-height: 140%;
 
   // @media (max-width: 565px) {

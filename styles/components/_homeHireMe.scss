@@ -1,0 +1,59 @@
+.home__hire-me {
+    width: 100%;
+    background: #1a1a1a;
+
+    &__inner {
+        width: 100%;
+        max-width: 1352px;
+        margin: 0 auto;
+        padding: 82px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        & > img {
+            margin-bottom: 24px;
+        }
+
+        &__subtitle {
+            @extend %title-24;
+            margin-bottom: 16px;
+            text-align: center;
+        }
+        &__title {
+            @extend %title-32;
+            width: 100%;
+            max-width: 45ch;
+            font-weight: 600;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+
+        &__button-group {
+            display: flex;
+            gap: 24px;
+            justify-content: center;
+            
+            & >:first-child {
+                @extend %primary-button;
+                font-family: var(--font-playfair-display);
+                padding: 0 22px;
+            }
+            & >:last-child {
+                @extend %primary-button;
+                background: transparent;
+                color: #fff;
+                font-family: var(--font-playfair-display);
+                padding: 0 22px;
+                border: 1px solid var(--Background, #282828);
+
+                & > svg {
+                    min-width: 100px;
+                    min-height: 100px;
+                    display: none;
+                }
+            }
+        }
+    }
+}

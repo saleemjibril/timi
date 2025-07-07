@@ -1,0 +1,126 @@
+.home__me {
+    width: 100%;
+    max-width: 1352px;
+    margin: 0 auto;
+    padding: 82px 20px;
+
+    &__grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: 24px;
+        margin-bottom: 164px;
+
+        & > img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    &__title {
+        @extend %title-48;
+        font-weight: 600;
+        margin-bottom: 24px;
+    }
+
+    &__card {   
+        box-shadow: 0px 4px 15px 0px #D021C526 inset;
+
+box-shadow: 0px -4px 15px 0px #D021C526 inset;
+display: flex;
+justify-content: space-between;
+gap: 26px;
+padding: 42px 64px;
+border-radius: 30px;
+margin-bottom: 82px;
+
+&__timeline {
+    @extend %title-32;
+    font-weight: 500;
+    color: #737373; 
+}
+
+&__inner {
+   
+
+    &__title {
+        @extend %title-32;
+        font-weight: 500;
+        margin-bottom: 8px;
+        
+    }
+    &__role {
+        @extend %title-24;
+        font-weight: 500;
+        margin-bottom: 16px;
+
+    }
+    &__subtitle {
+        @extend %title-24;
+        width: 100%;
+        max-width: 50ch;
+        margin-bottom: 16px;
+
+    }
+}
+    }
+
+    &__subtitle {
+        @extend %title-32;
+       font-weight: 600;
+       margin-bottom: 24px;
+
+    }
+
+    &__skillset {
+        background: #1A1A1A;
+        padding: 32px;
+        border-radius: 30px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 32px 24px;
+        margin-bottom: 82px;
+
+        & > img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    &__soft-grid-cover {
+        background: #1A1A1A;
+        padding: 32px;
+        border-radius: 30px;
+    }
+
+    &__soft-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 24px;
+        margin-bottom: 32px;
+    }
+
+    &__soft-card {
+        background: #282828;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        height: 237px;
+        justify-content: center;
+        padding: 24px;
+        border-radius: 15px;
+
+        &__title {
+            @extend %title-24;
+            font-weight: 600;
+        }
+    }
+
+    &__soft-grid-mini {
+        display: grid;
+        grid-template-columns: 1fr 1fr ;
+        gap: 24px;
+    }
+
+    
+}
