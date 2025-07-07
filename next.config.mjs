@@ -2,7 +2,7 @@
 const nextConfig = {
     reactStrictMode: true,
     images: {
-      domains: ['res.cloudinary.com', 'i.scdn.co'],
+      domains: ['res.cloudinary.com', 'i.scdn.co', 'ht-cdn2.adtng.com', 'ei.phncdn.com', 'pix-ht.trafficjunky.net'],
       loader: 'default',
       formats: ['image/webp', 'image/avif'],
     },

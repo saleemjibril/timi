@@ -1,0 +1,52 @@
+.home__projects {
+    padding: 82px 0;
+    &__title {
+        @extend %title-48;
+        font-weight: 500;
+        margin-bottom: 48px;
+    }
+
+    &__card {
+        display: flex;
+        align-items: center;
+        gap: 56px;
+        margin-bottom: 120px;
+
+        &__card1 {
+            &__subsubtitle {
+                margin-bottom: 4px;
+            }
+
+            &__title {
+                @extend %title-48;
+                font-weight: 500;
+                margin-bottom: 8px;
+            }
+            &__subtitle {
+                @extend %title-24;
+                font-weight: 400;
+                margin-bottom: 24px;
+            }
+
+            &__button {
+                border-radius: 26px;
+                background: #333333;
+                padding: 6px 16px;
+                width: fit-content;
+                height: 60px;
+
+                & > button {
+                    @extend %primary-button;
+                    font-family: var(--font-playfair-display);
+                    margin-bottom: 74px;
+                    padding: 0 22px;
+                }
+            }
+        }
+
+        & > img {
+            width: 100%;
+            height: auto;
+        }
+    }
+}

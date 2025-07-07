@@ -1,0 +1,73 @@
+.home__hero {
+    &__group {
+        display: flex;
+        gap: 42px;
+        margin-bottom: 82px;
+        &__card1 {
+            &__pills {
+                display: flex;
+                align-items: center;
+                gap: 16px;
+                margin-bottom: 16px;
+
+                & > div {
+                    @extend %title-14;
+                    width: fit-content;
+                    padding: 6px 12.5px;
+                    border-radius: 16px;
+                }
+
+                & >:first-child {
+                    border: 1px solid var(--Pink, #FF5E99)
+                }
+                & >:nth-child(2) {
+                    border: 1px solid var(--Green, #24A94C)
+                }
+                & >:nth-child(3) {
+                    border: 1px solid var(--Blue, #6595FF)
+                }
+                & >:nth-child(4) {
+                    border: 1px solid var(--Orange, #F37201)
+                }
+            }
+
+        }
+
+        &__card2 {
+            & > div {
+                @extend %title-20;
+            color: #737373;
+            margin-bottom: 16px;
+
+            & > span {
+                color: #FFF;
+            }
+            }
+
+            & > button {
+                @extend %primary-button;
+                font-family: var(--font-playfair-display);
+                margin-bottom: 74px;
+                padding: 0 22px;
+            }
+        }
+    }
+
+    &__image-grid {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1.3fr 1fr;
+        gap: 24px;
+
+        & > img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    &__bg {
+        width: 100%;
+        height: auto;
+        margin-top: -40px;
+    }
+}
