@@ -50,7 +50,8 @@ export default function Projects() {
         <button>
         View Project
       
-     
+          
+        <Image src={"/assets/icons/rightArrow.svg"} width={18} height={18} />
                       </button>
         </Link>
     
@@ -75,7 +76,8 @@ export default function Projects() {
         <button>
         View Project
       
-     
+          
+        <Image src={"/assets/icons/rightArrow.svg"} width={18} height={18} />
                       </button>
         </Link>
     
