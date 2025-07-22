@@ -1,6 +1,6 @@
 import EazinviteDesignStartergy from "../components/eazinviteDesignStartergy";
 import EazInviteHero from "../components/eazinviteHero";
-import EazInviteHighFidelity from "../components/eazInvitehighFidelity";
+import EazInviteHighFidelity from "@/app/components/eazInviteHighFidelity";
 import EazInviteProblem from "../components/eazinviteProblem";
 import HomeHireMe from "../components/homeHireMe";
 import StyleGuide from "../components/styleGuide";
