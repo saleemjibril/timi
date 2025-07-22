@@ -1,17 +1,16 @@
 import Image from "next/image";
 
-export default function HomeHireMe() {
+export default function HomeHireMe({ title, image, subtitle }) {
     return (
         <div className="home__hire-me">
             <div className="home__hire-me__inner">
-                <Image src="/assets/headshot2.svg" width={120} height={120} />
+                <Image src={image} width={120} height={120} />
                 <div className="home__hire-me__inner__subtitle">
-                    Just before you go...
+                    {title}
                 </div>
                 <div className="home__hire-me__inner__title">
-                    If you’ve made it this far, I trust it’s clear that I bring the skills, creativity, and insight to elevate your product and drive real results. Ready when you are.
+                    {subtitle}
                 </div>
-
 
                 <div className="home__hire-me__inner__button-group">
                     <button>

@@ -1,0 +1,75 @@
+.demicare__high-fidelity {
+    width: 100%;
+    gap: 56px;
+    background: #FFE4DF;
+    color: #000;
+
+    &__inner {
+        width: 100%;
+        max-width: 1352px;
+        padding: 82px 20px;
+        margin: 0 auto;
+
+        &__title {
+            @extend %title-48;
+            font-weight: 500;
+            margin-bottom: 16px;
+        }
+
+        &__subtitle {
+            @extend %title-22;
+            font-weight: 400;
+            margin-bottom: 24px;
+
+            &>span {
+                font-weight: 500;
+                font-style: italic
+            }
+
+        }
+
+        &>button {
+            @extend %primary-button;
+            background: #1a1a1a;
+            color: #fff;
+            font-family: var(--font-playfair-display);
+            margin-bottom: 64px;
+        }
+
+        &__card {
+            padding: 42px 64px;
+            background: #fff;
+            margin-bottom: 64px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            &__title {
+                @extend %title-32;
+                font-weight: 500;
+                margin-bottom: 16px;
+
+            }
+
+            &__subtitle {
+                @extend %title-22;
+                font-weight: 400;
+                margin-bottom: 32px;
+
+                &>span {
+                    font-weight: 500;
+                    font-style: italic
+                }
+
+            }
+
+            &>img {
+                width: 100%;
+                height: auto;
+            }
+
+
+        }
+    }
+}

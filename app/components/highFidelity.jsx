@@ -30,15 +30,15 @@ From layout consistency to micro-interactions, I focused on refining the user jo
             </div>
 
             <div className="sketching__view__grid">
-            <Image src="/assets/high1.png" width={378.6700134277344} height={269.2764587402344} />
-            <Image src="/assets/high2.png" width={378.6700134277344} height={269.2764587402344} />
-            <Image src="/assets/high3.png" width={378.6700134277344} height={269.2764587402344} />
-            <Image src="/assets/high4.png" width={378.6700134277344} height={269.2764587402344} />
-            <Image src="/assets/high5.png" width={378.6700134277344} height={269.2764587402344} />
-            <Image src="/assets/high6.png" width={378.6700134277344} height={245.10537719726562} />
-            <Image src="/assets/high7.png" width={378.6700134277344} height={269.2764587402344} />
-            <Image src="/assets/high8.png" width={378.6700134277344} height={269.2764587402344} />
-            <Image src="/assets/high9.png" width={378.67} height={269.2764587402344} />
+            <Image src="/assets/high1.svg" width={378.6700134277344} height={269.2764587402344} />
+            <Image src="/assets/high2.svg" width={378.6700134277344} height={269.2764587402344} />
+            <Image src="/assets/high3.svg" width={378.6700134277344} height={269.2764587402344} />
+            <Image src="/assets/high4.svg" width={378.6700134277344} height={269.2764587402344} />
+            <Image src="/assets/high5.svg" width={378.6700134277344} height={269.2764587402344} />
+            <Image src="/assets/high6.svg" width={378.6700134277344} height={245.10537719726562} />
+            <Image src="/assets/high7.svg" width={378.6700134277344} height={269.2764587402344} />
+            <Image src="/assets/high8.svg" width={378.6700134277344} height={269.2764587402344} />
+            <Image src="/assets/high9.svg" width={378.67} height={269.2764587402344} />
             
             </div>
         </div>
@@ -49,12 +49,12 @@ From layout consistency to micro-interactions, I focused on refining the user jo
             </div>
 
             <div className="sketching__view__grid">
-            <Image src="/assets/jobs1.png" width={378.6700134277344} height={269.2764587402344} />
-            <Image src="/assets/jobs2.png" width={378.6700134277344} height={269.2764587402344} />
-            <Image src="/assets/jobs3.png" width={378.6700134277344} height={269.2764587402344} />
-            <Image src="/assets/jobs4.png" width={378.6700134277344} height={269.2764587402344} />
-            <Image src="/assets/jobs5.png" width={378.6700134277344} height={269.2764587402344} />
-            <Image src="/assets/jobs6.png" width={378.6700134277344} height={245.10537719726562} />
+            <Image src="/assets/jobs1.svg" width={378.6700134277344} height={269.2764587402344} />
+            <Image src="/assets/jobs2.svg" width={378.6700134277344} height={269.2764587402344} />
+            <Image src="/assets/jobs3.svg" width={378.6700134277344} height={269.2764587402344} />
+            <Image src="/assets/jobs4.svg" width={378.6700134277344} height={269.2764587402344} />
+            <Image src="/assets/jobs5.svg" width={378.6700134277344} height={269.2764587402344} />
+            <Image src="/assets/jobs6.svg" width={378.6700134277344} height={245.10537719726562} />
             </div>
         </div>
         <div className="sketching__view">
@@ -64,13 +64,13 @@ From layout consistency to micro-interactions, I focused on refining the user jo
             </div>
 
             <div className="sketching__view__grid">
-            <Image src="/assets/recruit1.png" width={378.6700134277344} height={269.2764587402344} />
-            <Image src="/assets/recruit2.png" width={378.6700134277344} height={269.2764587402344} />
-            <Image src="/assets/recruit3.png" width={378.6700134277344} height={269.2764587402344} />
-            <Image src="/assets/recruit4.png" width={378.6700134277344} height={269.2764587402344} />
-            <Image src="/assets/recruit5.png" width={378.6700134277344} height={269.2764587402344} />
-            <Image src="/assets/recruit6.png" width={378.6700134277344} height={245.10537719726562} />
-            <Image src="/assets/recruit7.png" width={378.6700134277344} height={245.10537719726562} />
+            <Image src="/assets/recruit1.svg" width={378.6700134277344} height={269.2764587402344} />
+            <Image src="/assets/recruit2.svg" width={378.6700134277344} height={269.2764587402344} />
+            <Image src="/assets/recruit3.svg" width={378.6700134277344} height={269.2764587402344} />
+            <Image src="/assets/recruit4.svg" width={378.6700134277344} height={269.2764587402344} />
+            <Image src="/assets/recruit5.svg" width={378.6700134277344} height={269.2764587402344} />
+            <Image src="/assets/recruit6.svg" width={378.6700134277344} height={245.10537719726562} />
+            <Image src="/assets/recruit7.svg" width={378.6700134277344} height={245.10537719726562} />
             </div>
         </div>
         <div className="sketching__view">
@@ -80,12 +80,12 @@ From layout consistency to micro-interactions, I focused on refining the user jo
             </div>
 
             <div className="sketching__view__grid">
-            <Image src="/assets/client1.png" width={378.6700134277344} height={269.2764587402344} />
-            <Image src="/assets/client2.png" width={378.6700134277344} height={269.2764587402344} />
-            <Image src="/assets/client3.png" width={378.6700134277344} height={269.2764587402344} />
-            <Image src="/assets/client4.png" width={378.6700134277344} height={269.2764587402344} />
-            <Image src="/assets/client5.png" width={378.6700134277344} height={269.2764587402344} />
-            <Image src="/assets/client6.png" width={378.6700134277344} height={245.10537719726562} />
+            <Image src="/assets/client1.svg" width={378.6700134277344} height={269.2764587402344} />
+            <Image src="/assets/client2.svg" width={378.6700134277344} height={269.2764587402344} />
+            <Image src="/assets/client3.svg" width={378.6700134277344} height={269.2764587402344} />
+            <Image src="/assets/client4.svg" width={378.6700134277344} height={269.2764587402344} />
+            <Image src="/assets/client5.svg" width={378.6700134277344} height={269.2764587402344} />
+            <Image src="/assets/client6.svg" width={378.6700134277344} height={245.10537719726562} />
             
             </div>
         </div>
@@ -96,12 +96,12 @@ From layout consistency to micro-interactions, I focused on refining the user jo
             </div>
 
             <div className="sketching__view__grid">
-            <Image src="/assets/team1.png" width={378.6700134277344} height={269.2764587402344} />
-            <Image src="/assets/team2.png" width={378.6700134277344} height={269.2764587402344} />
-            <Image src="/assets/team3.png" width={378.6700134277344} height={269.2764587402344} />
-            <Image src="/assets/team4.png" width={378.6700134277344} height={269.2764587402344} />
-            <Image src="/assets/team5.png" width={378.6700134277344} height={269.2764587402344} />
-            <Image src="/assets/team6.png" width={378.6700134277344} height={245.10537719726562} />
+            <Image src="/assets/team1.svg" width={378.6700134277344} height={269.2764587402344} />
+            <Image src="/assets/team2.svg" width={378.6700134277344} height={269.2764587402344} />
+            <Image src="/assets/team3.svg" width={378.6700134277344} height={269.2764587402344} />
+            <Image src="/assets/team4.svg" width={378.6700134277344} height={269.2764587402344} />
+            <Image src="/assets/team5.svg" width={378.6700134277344} height={269.2764587402344} />
+            <Image src="/assets/team6.svg" width={378.6700134277344} height={245.10537719726562} />
             
             </div>
         </div>

@@ -1,0 +1,57 @@
+.demicare__whats-next {
+    width: 100%;
+    gap: 56px;
+    background: #E8AB9B;
+    color: #000;
+
+    &__inner {
+        width: 100%;
+        max-width: 1352px;
+        padding: 82px 20px;
+        margin: 0 auto;
+        display: grid;
+        align-items: center;
+        grid-template-columns: 1.82fr 1fr;
+        gap: 37px;
+
+        &__title {
+            @extend %title-48;
+            font-weight: 500;
+            margin-bottom: 16px;
+        }
+
+        &__subtitle {
+            @extend %title-22;
+            font-weight: 400;
+            margin-bottom: 24px;
+
+            &>ul {
+                padding-left: 24px;
+                margin-bottom: 14px;
+
+                &>li {
+                    margin-bottom: 8px;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+
+        }
+
+
+        &__button {
+            @extend %primary-button;
+            background: #1a1a1a;
+            color: #fff;
+            font-family: var(--font-playfair-display);
+        }
+
+        & > img {
+            width: 100%;
+            height: auto;
+        }
+
+    }
+}

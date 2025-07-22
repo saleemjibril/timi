@@ -1,0 +1,139 @@
+.demicare__design-approach {
+    width: 100%;
+    // max-width: 1352px;
+    // padding: 82px 20px;
+    // margin: 0 auto;
+    // display: flex;
+    // align-items: center;
+    gap: 56px;
+    // margin-bottom: 120px;
+    background: #FFE4DF;
+    color: #000;
+
+    &__inner {
+        width: 100%;
+        max-width: 1352px;
+        padding: 82px 20px;
+        margin: 0 auto;
+
+        &__title {
+            @extend %title-48;
+            font-weight: 500;
+            margin-bottom: 16px;
+        }
+
+        &__subtitle {
+            @extend %title-22;
+            font-weight: 400;
+            margin-bottom: 24px;
+
+            & > span {
+                font-weight: 500;
+                font-style: italic
+            }
+        }
+
+        &__button {
+            @extend %primary-button;
+            background: #000000;
+            color: #fff;
+            margin-bottom: 64px;
+        }
+
+        &__tab-label {
+            @extend %title-24;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            color: #737373;
+            margin-bottom: 24px;
+
+            &__active {
+                color: #000;
+            }
+        }
+
+        &__cards {
+            width: 100%;
+            background: #FFFFFF;
+            padding: 64px;
+            display: grid;
+            grid-template-columns: 1fr 1px 1fr;
+            gap: 40px;
+            margin-bottom: 48px;
+
+            &__card {
+                &__user {
+
+                    display: flex;
+                    gap: 32px;
+                    margin-bottom: 32px;
+
+                    &>:last-child {
+                        font-size: 18px;
+
+                        display: flex;
+                        flex-direction: column;
+                        gap: 4px;
+                        line-height: 140%;
+
+                        &>:first-child {
+                            font-size: 28px !important;
+                            font-weight: 500;
+                        }
+                    }
+
+                }
+
+            }
+            &__divider {
+                width: 1px;
+                // height: 719px;
+                background: #9F9F9F;
+            }
+            &__title {
+                @extend %title-22;
+                font-weight: 500;
+                margin-bottom: 12px;
+            }
+
+            &__subtitle {
+                @extend %title-18;
+                font-weight: 400;
+                margin-bottom: 24px;
+            }
+            &__list {
+                @extend %title-18;
+                font-weight: 400;
+                margin-bottom: 24px;
+                padding-left: 24px;
+                
+                & > li {
+                    margin-bottom: 8px;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+
+        &__list {
+            @extend %title-22;
+            font-weight: 400;
+            margin-bottom: 24px;
+            padding-left: 24px;
+            
+            & > li {
+                margin-bottom: 8px;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+    }
+
+}

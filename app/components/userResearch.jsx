@@ -1,3 +1,5 @@
+import ClicHireSlide from "./clichireSlide";
+
 export default function UserResearch() {
     return (
         <div className="user-research">
@@ -29,7 +31,8 @@ export default function UserResearch() {
                 </div>
             </div>
             </div>
-           
+            <ClicHireSlide />
+
         </div>
     )
 }

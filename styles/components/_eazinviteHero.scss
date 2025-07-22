@@ -1,0 +1,58 @@
+.eazinvite__hero {
+    width: 100%;
+    // max-width: 1352px;
+    // padding: 82px 20px;
+    // margin: 0 auto;
+    // display: flex;
+    // align-items: center;
+    // margin-bottom: 120px;
+    // color: #000;
+
+    &__inner {
+        width: 100%;
+        max-width: 1352px;
+        padding: 82px 20px;
+        margin: 0 auto;
+        display: grid;
+        align-items: center;
+        grid-template-columns: 1fr 1.1fr;
+        gap: 48px;
+
+        
+        &__title {
+            @extend %title-48;
+            font-weight: 500;
+            margin-bottom: 16px;
+
+            & > span {
+                text-decoration: underline;
+                color: #05B30B;
+                font-weight: 600;
+            }
+        }
+
+        &__subtitle {
+            @extend %title-22;
+            font-weight: 400;
+            margin-bottom: 24px;
+
+            & > span {
+                font-weight: 500;
+                font-style: italic
+            }
+        }
+
+        &__button {
+            @extend %primary-button;
+            font-family: var(--font-playfair-display);
+            margin-bottom: 32px;
+        }
+
+        & > img {
+            width: 100%;
+            height: auto;
+        }
+
+    }
+
+}

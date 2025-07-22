@@ -1,0 +1,41 @@
+.demicare__hero {
+    background: url('/assets/demicareMockup.svg');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 49.03vw;
+    padding-top: 88px;
+
+    &__back {
+        margin-bottom: 42px;
+    }
+
+  &__inner {
+    width: 100%;
+    max-width: 1352px;
+    padding: 0 20px;
+    margin: 0 auto;
+
+    &__title {
+        @extend %title-48;
+        font-weight: 600;
+        margin-bottom: 12px;
+        width: 100%;
+        max-width: 22.5ch
+    }
+    &__subtitle {
+        @extend %title-22;
+        font-weight: 500;
+        margin-bottom: 16px;
+        width: 100%;
+        max-width: 52ch
+    }
+
+    & > button {
+        @extend %primary-button;
+        font-family: var(--font-playfair-display);
+        margin-bottom: 32px;
+    }
+
+  }
+}

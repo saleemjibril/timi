@@ -1,0 +1,52 @@
+.demicare__low-fidelity {
+    width: 100%;
+    gap: 56px;
+    background: #E8AB9B;
+    color: #000;
+
+    &__inner {
+        width: 100%;
+        max-width: 1352px;
+        padding: 82px 20px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        gap: 48px;
+
+        &__title {
+            @extend %title-48;
+            font-weight: 500;
+            margin-bottom: 16px;
+        }
+        
+        &__subtitle {
+            @extend %title-22;
+            font-weight: 400;
+            margin-bottom: 24px;
+
+            & > span {
+                font-weight: 500;
+                font-style: italic
+            }
+        }
+
+
+       & > div {
+        & > button {
+            @extend %primary-button;
+            background: #000000;
+            font-family: var(--font-playfair-display);
+            color: #fff;
+            margin-bottom: 64px;
+            padding: 12px 16px;
+        }
+       }
+
+       & > img {
+        width: 100%;
+        height: auto;
+       }
+
+    }
+
+}

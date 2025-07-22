@@ -26,18 +26,18 @@ Built using insights from my initial research and user flows, these wireframes s
             <div className="sketching__view__title">Professional View</div>
 
             <div className="sketching__view__grid">
-            <Image src="/assets/view1.png" width={378.6700134277344} height={269.2764587402344} />
-            <Image src="/assets/view2.png" width={378.6700134277344} height={269.2764587402344} />
-            <Image src="/assets/view3.png" width={378.6700134277344} height={269.2764587402344} />
-            <Image src="/assets/view4.png" width={378.6700134277344} height={269.2764587402344} />
-            <Image src="/assets/view5.png" width={378.6700134277344} height={269.2764587402344} />
-            <Image src="/assets/view6.png" width={378.6700134277344} height={269.2764587402344} />
-            <Image src="/assets/view7.png" width={378.6700134277344} height={269.2764587402344} />
-            <Image src="/assets/view8.png" width={378.6700134277344} height={269.2764587402344} />
-            <Image src="/assets/view9.png" width={378.6700134277344} height={269.2764587402344} />
-            <Image src="/assets/view10.png" width={378.6700134277344} height={269.2764587402344} />
-            <Image src="/assets/view11.png" width={378.6700134277344} height={269.2764587402344} />
-            <Image src="/assets/view12.png" width={378.6700134277344} height={269.2764587402344} />
+            <Image src="/assets/view1.svg" width={378.6700134277344} height={269.2764587402344} />
+            <Image src="/assets/view2.svg" width={378.6700134277344} height={269.2764587402344} />
+            <Image src="/assets/view3.svg" width={378.6700134277344} height={269.2764587402344} />
+            <Image src="/assets/view4.svg" width={378.6700134277344} height={269.2764587402344} />
+            <Image src="/assets/view5.svg" width={378.6700134277344} height={269.2764587402344} />
+            <Image src="/assets/view6.svg" width={378.6700134277344} height={269.2764587402344} />
+            <Image src="/assets/view7.svg" width={378.6700134277344} height={269.2764587402344} />
+            <Image src="/assets/view8.svg" width={378.6700134277344} height={269.2764587402344} />
+            <Image src="/assets/view9.svg" width={378.6700134277344} height={269.2764587402344} />
+            <Image src="/assets/view10.svg" width={378.6700134277344} height={269.2764587402344} />
+            <Image src="/assets/view11.svg" width={378.6700134277344} height={269.2764587402344} />
+            <Image src="/assets/view12.svg" width={378.6700134277344} height={269.2764587402344} />
             </div>
         </div>
     </div>
