@@ -192,7 +192,7 @@ export default function HomeHero(params) {
                   />
                 </svg>
                 </span>
-                with Design.
+                {" "}with Design.
               </span>
             </div>
           </div>
