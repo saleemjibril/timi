@@ -34,9 +34,8 @@
         }
 
         &__button {
-            @extend %primary-button;
-            background: #000000;
-            color: #fff;
+            @extend %primary-button-corner;
+            font-family: var(--font-playfair-display);
             margin-bottom: 64px;
         }
 

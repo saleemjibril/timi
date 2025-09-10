@@ -1,6 +1,43 @@
+"use client";
+import { useRef } from "react";
 import Image from "next/image";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
 export default function Footer() {
+    const marqueeRef = useRef(null);
+
+    useGSAP(() => {
+       
+        // Create marquee animation
+        const marqueeAnimation = gsap.to(marqueeRef.current.querySelector('span'), {
+          x: "-25%", // Move by 25% (one repetition of the text)
+          duration: 10,
+          ease: "none",
+          repeat: -1,
+        });
+    
+        // Add hover controls for marquee
+        const marqueeElement = marqueeRef.current;
+        
+        const handleMouseEnter = () => {
+          marqueeAnimation.pause();
+        };
+        
+        const handleMouseLeave = () => {
+          marqueeAnimation.resume();
+        };
+    
+        marqueeElement.addEventListener('mouseenter', handleMouseEnter);
+        marqueeElement.addEventListener('mouseleave', handleMouseLeave);
+    
+        // Cleanup function
+        return () => {
+          marqueeElement.removeEventListener('mouseenter', handleMouseEnter);
+          marqueeElement.removeEventListener('mouseleave', handleMouseLeave);
+        };
+      });
+
     return (
         <div className="footer">
             <div className="footer__inner">
@@ -39,8 +76,14 @@ export default function Footer() {
                     </div>
                 </div>
 
-            <Image className="footer__inner__bg" src={"/assets/footer-bg.svg"} width={1440} height={224} />
-            </div>
+                <div className="footer__inner__bg" ref={marqueeRef}>
+          <span>
+            <span className="marquee-text">Growth Focused</span>
+            <span className="marquee-text">Growth Focused</span>
+            <span className="marquee-text">Growth Focused</span>
+            <span className="marquee-text">Growth Focused</span>
+          </span>
+        </div>            </div>
 
 
         </div>

@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 
 export default function DemicarehighFidelity() {
@@ -13,7 +14,12 @@ export default function DemicarehighFidelity() {
                     <br />
                     Every screen was carefully designed to reflect the user’s journey, from logging skincare routines to tracking progress and staying consistent. The result was a clean, intuitive interface that balances functionality with simplicity, ensuring both beginners and skincare enthusiasts feel at home.
                 </div>
-                <button>Back to Top <Image src="/assets/icons/upArrow.svg" width={24} height={24} />
+                <button
+                 onClick={() =>   window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                })}
+                >Back to Top <Image src="/assets/icons/upArrow.svg" width={24} height={24} />
                 </button>
             <div className="demicare__high-fidelity__inner__card">
                 <div className="demicare__high-fidelity__inner__card__title">

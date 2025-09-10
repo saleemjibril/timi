@@ -37,10 +37,12 @@
         }
 
         &__button {
-            @extend %primary-button;
-            background: #282828;
-            color: #fff;
+            @extend %primary-button-corner;
             font-family: var(--font-playfair-display);
+
+            &::before {
+                background: #282828;
+            }
         }
 
     }

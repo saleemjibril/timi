@@ -44,12 +44,14 @@
                 padding: 0 22px;
             }
             & >:last-child {
-                @extend %primary-button;
-                background: #1a1a1a;
-                color: #fff;
+                @extend %primary-button-corner;
                 font-family: var(--font-playfair-display);
                 margin-bottom: 74px;
                 padding: 0 22px;
+
+                &::before {
+                    background: #1a1a1a !important;
+                }
             }
         }
     }

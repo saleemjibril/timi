@@ -47,12 +47,8 @@
                 padding: 0 22px;
             }
             & >:last-child {
-                @extend %primary-button;
-                background: transparent;
-                color: #fff;
+                @extend %transparent-button;
                 font-family: var(--font-playfair-display);
-                padding: 0 22px;
-                border: 1px solid var(--Background, #282828);
 
                 & > svg {
                     min-width: 100px;

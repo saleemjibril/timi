@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 
 export default function EazInviteHighFidelity() {
@@ -10,7 +11,12 @@ export default function EazInviteHighFidelity() {
                 These high-fidelity designs were crafted to simplify how users interact with the platform, ensuring every screen supports clarity and ease of use. Prioritizing thoughtful layout, accessibility, and purposeful interactions, the visual direction enhances event setup, guest handling, and invitation workflows. The outcome is a polished, reliable experience that supports both functionality and modern design principles.
             </div>
 
-            <button className="sketching__title-button">Back to Top <Image src="/assets/icons/upArrow.svg" width={24} height={24} />
+            <button className="sketching__title-button"
+             onClick={() =>   window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            })}
+            >Back to Top <Image src="/assets/icons/upArrow.svg" width={24} height={24} />
             </button>
 
 

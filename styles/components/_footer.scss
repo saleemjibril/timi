@@ -8,7 +8,7 @@
         width: 100%;
         max-width: 1352px;
         margin: 0 auto;
-        padding: 82px 20px 120px 20px;
+        padding: 82px 20px 0 20px;
         
         &__title-group {
             display: flex;
@@ -51,12 +51,31 @@
             color: #737373;
         }
         }
+        
+
         &__bg {
+            color: transparent;
+            -webkit-text-stroke: 2px #1C1C1C;
+            text-stroke: 2px #1C1C1C;
+            font-size: 168px;
+            font-weight: bold;
+            // margin: 20px 0;
             width: 100%;
-            height: auto;
-            margin: 0 auto;
-            position: absolute;
-            bottom: 0;
+            white-space: nowrap;
+            font-family: var(--font-playfair-display);
+            opacity: 0.2;
+            overflow: hidden;
+            cursor: pointer;
+    
+            & > span {
+                display: inline-block;
+                white-space: nowrap;
+            }
+    
+            .marquee-text {
+                display: inline-block;
+                margin-right: 20px;
+            }
         }
     }
 

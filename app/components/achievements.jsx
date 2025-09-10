@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 
 export default function Achievements({ subtitle, numbers, bg }) {
@@ -7,7 +8,12 @@ export default function Achievements({ subtitle, numbers, bg }) {
                 <div className="achievements__inner__title-group">
                     <div>Achievements</div>
                     <div><div>{subtitle}</div>
-                        <button>Back to Top <Image src="/assets/icons/upArrow.svg" width={24} height={24} />
+                        <button
+                         onClick={() =>   window.scrollTo({
+                            top: 0,
+                            behavior: 'smooth'
+                        })}
+                        >Back to Top <Image src="/assets/icons/upArrow.svg" width={24} height={24} />
                         </button>
 
                     </div>

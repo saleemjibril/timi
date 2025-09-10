@@ -1,6 +1,10 @@
+"use client"
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export default function HireMe() {
+
+  const router = useRouter();
     return (
       <div className="hire-me">
           <div className="hire-me__inner">
@@ -20,7 +24,9 @@ export default function HireMe() {
 <Image src={"/assets/icons/rightArrow.svg"} width={18} height={18} />
                 </button>
 
-                <button> See next project
+                <button
+                onClick={() => router.push("/eazinvite")}
+                > See next project
 
 <Image src={"/assets/icons/rightArrowLight.svg"} width={18} height={18} /></button>
             </div>

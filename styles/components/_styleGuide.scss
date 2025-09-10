@@ -17,10 +17,12 @@
     }
 
     & > button {
-        @extend %primary-button;
-        background: #1a1a1a;
-        color: #fff;
-        font-family: var(--font-playfair-display);
+        @extend %primary-button-corner;
+                    font-family: var(--font-playfair-display);
+
+                    &::before {
+                        background: #1a1a1a;
+                    }
         margin-bottom: 74px;
     }
 

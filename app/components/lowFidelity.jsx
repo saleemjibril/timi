@@ -1,6 +1,10 @@
+"use client";
 import Image from "next/image";
+import { useState } from "react";
 
 export default function LowFidelity() {
+
+    const [activeTab, setActiveTab] = useState("Professional View");
     return (
         <div className="sketching">
         <div className="sketching__title">
@@ -17,13 +21,13 @@ Built using insights from my initial research and user flows, these wireframes s
         </button>
 
         <div className="sketching__tab-label">
-            <div className="sketching__tab-label__active">Professional View</div>
+            <div className={`pointer ${activeTab === "Professional View" ? "sketching__tab-label__active" : ""}`} onClick={() => setActiveTab("Professional View")}>Professional View</div>
             <Image src="/assets/icons/divider.svg" width={24} height={24} />
-            <div>Enterprise View</div>
+            <div className={`pointer ${activeTab === "Enterprise View" ? "sketching__tab-label__active" : ""}`} onClick={() => setActiveTab("Enterprise View")}>Enterprise View</div>
         </div>
 
         <div className="sketching__view">
-            <div className="sketching__view__title">Professional View</div>
+            <div className="sketching__view__title">{activeTab}</div>
 
             <div className="sketching__view__grid">
             <Image src="/assets/view1.svg" width={378.6700134277344} height={269.2764587402344} />

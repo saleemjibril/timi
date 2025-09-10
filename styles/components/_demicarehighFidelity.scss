@@ -29,11 +29,13 @@
         }
 
         &>button {
-            @extend %primary-button;
-            background: #1a1a1a;
-            color: #fff;
+            @extend %primary-button-corner;
             font-family: var(--font-playfair-display);
             margin-bottom: 64px;
+
+            &::before {
+                background: #1a1a1a;
+            }
         }
 
         &__card {

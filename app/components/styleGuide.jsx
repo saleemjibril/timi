@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 
 export default function StyleGuide({ subtitle, images }) {
@@ -10,7 +11,12 @@ export default function StyleGuide({ subtitle, images }) {
                 For Clichire, I developed a comprehensive style guide to ensure visual consistency and ease of use across the platform. The guide defined key elements such as color palettes, typography, spacing, and iconography—creating a cohesive foundation for both the user interface and the overall brand experience. This helped maintain clarity, scalability, and accessibility throughout the design system.
             </div>
 
-            <button>Back to Top <Image src="/assets/icons/upArrow.svg" width={24} height={24} />
+            <button
+            onClick={() =>   window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            })}
+            >Back to Top <Image src="/assets/icons/upArrow.svg" width={24} height={24} />
             </button>
 
             <div className="style-guide__grid">

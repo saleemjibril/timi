@@ -1,6 +1,17 @@
+"use client";
 import Image from "next/image";
+import { useState } from "react";
 
 export default function HighFidelity() {
+    const [activeTab, setActiveTab] = useState("Professional View");
+
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    };
+
     return (
         <div className="sketching">
         <div className="sketching__title">
@@ -14,13 +25,13 @@ This stage was all about creating a visually engaging experience while staying t
 From layout consistency to micro-interactions, I focused on refining the user journey and ensuring that each screen communicates both function and feel. Below is a snapshot of the high-fidelity designs that bring Clichire to life in full color:
         </div>
 
-        <button className="sketching__title-button">Back to Top <Image src="/assets/icons/upArrow.svg" width={24} height={24} />
+        <button className="sketching__title-button" onClick={scrollToTop}>Back to Top <Image src="/assets/icons/upArrow.svg" width={24} height={24} />
         </button>
 
         <div className="sketching__tab-label">
-            <div className="sketching__tab-label__active">Professional View</div>
+            <div className={`pointer ${activeTab === "Professional View" ? "sketching__tab-label__active" : ""}`} onClick={() => setActiveTab("Professional View")}>Professional View</div>
             <Image src="/assets/icons/divider.svg" width={24} height={24} />
-            <div>Enterprise View</div>
+            <div className={`pointer ${activeTab === "Enterprise View" ? "sketching__tab-label__active" : ""}`} onClick={() => setActiveTab("Enterprise View")}>Enterprise View</div>
         </div>
 
         <div className="sketching__view">

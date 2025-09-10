@@ -30,7 +30,17 @@ export default function DesignTools() {
         cards.forEach((card, index) => {
             if (index > 0) {
                 gsap.to(card, {
-                    y: () => -(index * 140), // Move up by the gap amount * index
+                    y: () => {
+                        // Calculate total distance needed to stack on first card
+                        let totalDistance = 0;
+                        for (let i = 1; i <= index; i++) {
+                            totalDistance += 140; // gap between cards
+                            if (cards[i]) {
+                                totalDistance += cards[i].offsetHeight; // height of each card above
+                            }
+                        }
+                        return -totalDistance;
+                    }, // Move up by the gap amount * index
                     scale: 1 - (index * 0.02),
                     ease: "none",
                     scrollTrigger: {

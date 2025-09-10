@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 
 export default function DemicareWhatsNext() {
@@ -21,7 +22,12 @@ export default function DemicareWhatsNext() {
 
                  
                 </div>
-                <button className="demicare__whats-next__inner__button">Back to Top <Image src="/assets/icons/upArrow.svg" width={24} height={24} />
+                <button className="demicare__whats-next__inner__button"
+                 onClick={() =>   window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                })}
+                >Back to Top <Image src="/assets/icons/upArrow.svg" width={24} height={24} />
                 </button>
                 </div>
                 <Image src="/assets/demicareWhatsNext.svg" width={451} height={462} />
