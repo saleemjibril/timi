@@ -22,11 +22,14 @@ export default function Me() {
       onEnter: () => {
         // Start ping-pong marquee animation when card comes into view
         marqueeAnimation = gsap.to(marqueeRef.current, {
-          y: () =>
-            -(
-              marqueeRef.current.scrollHeight -
-              marqueeRef.current.parentElement.clientHeight
-            ), // Move to end of actual content
+          y: () => {
+            const marqueeHeight = marqueeRef.current.scrollHeight;
+            const containerHeight = marqueeRef.current.parentElement.clientHeight;
+            const lastCardHeight = marqueeRef.current.lastElementChild.offsetHeight;
+            
+            // Move enough to show the last card completely, plus a small buffer
+            return -(marqueeHeight - containerHeight + lastCardHeight * 0.1);
+          },
           duration: 8,
           ease: "power2.inOut",
           repeat: -1,

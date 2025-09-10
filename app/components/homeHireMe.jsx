@@ -4,7 +4,10 @@ export default function HomeHireMe({ title, image, subtitle }) {
     return (
         <div className="home__hire-me">
             <div className="home__hire-me__inner">
-                <Image src={image} width={120} height={120} />
+
+                <div className="home__hire-me__inner__image">
+                <Image src={image}objectFit="cover" layout="fill" />
+                    </div>
                 <div className="home__hire-me__inner__subtitle">
                     {title}
                 </div>

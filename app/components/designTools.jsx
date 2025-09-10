@@ -18,52 +18,34 @@ export default function DesignTools() {
         const container = containerRef.current;
         
         if (!container || cards.length === 0) return;
-
-        // Set initial positions for cards
+    
+        // Set initial positions
         gsap.set(cards, {
             y: 0,
             scale: 1,
             transformOrigin: "center top"
         });
-
-        // Create the stack animation with ScrollTrigger
-        const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: mainContainerRef.current,
-                start: "top top",
-                end: () => `+=${(cards.length - 1) * window.innerHeight * 0.8}`, // Adjust multiplier for desired scroll distance
-                scrub: 1,
-                pin: true,
-                anticipatePin: 1,
-                invalidateOnRefresh: true,
-                onUpdate: (self) => {
-                    // Optional: Add any dynamic updates during scroll
-                }
-            }
-        });
-
-        // Animate cards to stack (except the first one)
+    
+        // Create individual ScrollTriggers for each card
         cards.forEach((card, index) => {
             if (index > 0) {
-                // Calculate the target position to stack at the first card's position
-                const firstCard = cards[0];
-                if (firstCard && card) {
-                    // Get initial positions
-                    const firstCardRect = firstCard.getBoundingClientRect();
-                    const currentCardRect = card.getBoundingClientRect();
-                    const targetY = firstCardRect.top - currentCardRect.top;
-                    
-                    tl.to(card, {
-                        y: targetY,
-                        scale: 1 - (index * 0.02), // Slightly scale down each subsequent card
-                        ease: "power2.inOut",
-                        duration: 1
-                    }, index * 0.2); // Stagger the animations
-                }
+                gsap.to(card, {
+                    y: () => -(index * 140), // Move up by the gap amount * index
+                    scale: 1 - (index * 0.02),
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: mainContainerRef.current,
+                        start: "top top",
+                        end: `+=${window.innerHeight * 2}`,
+                        scrub: 1,
+                        pin: index === 1 ? true : false, // Only pin on first card animation
+                        anticipatePin: 1,
+                    }
+                });
             }
         });
-
-        // Cleanup function
+    
+        // Cleanup
         return () => {
             ScrollTrigger.getAll().forEach(trigger => trigger.kill());
         };

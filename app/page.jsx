@@ -32,7 +32,7 @@ export default function Home() {
      <Hideout />
      <Faq />
      <HomeHireMe 
-     image={"/assets/headshot2.svg"}
+     image={"/assets/timi.gif"}
      title={"Just before you go..."}
      subtitle={"If you’ve made it this far, I trust it’s clear that I bring the skills, creativity, and insight to elevate your product and drive real results. Ready when you are."}
      />
