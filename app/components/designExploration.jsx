@@ -20,12 +20,12 @@ export default function DesignExploration() {
       
       gsap.to(mobileGridRef.current, {
         x: -mobileDistanceToMove, // Move by exact distance of unique images
-        duration: 30,
+        duration: 60, // Changed from 30 to 60 (2x slower)
         ease: "none",
         repeat: -1,
       });
     }
-
+  
     // Landing page grid animation - 20 unique images, so move by exactly 20 image widths + gaps
     if (landingGridRef.current) {
       const landingImageWidth = 891; // Width of each image
@@ -35,7 +35,7 @@ export default function DesignExploration() {
       
       gsap.to(landingGridRef.current, {
         x: -landingDistanceToMove, // Move by exact distance of unique images
-        duration: 35,
+        duration: 70, // Changed from 35 to 70 (2x slower)
         ease: "none",
         repeat: -1,
       });

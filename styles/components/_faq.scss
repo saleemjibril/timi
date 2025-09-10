@@ -33,11 +33,28 @@
             justify-content: space-between;
             color: #000000;
             margin-bottom: 24px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+
+            &:hover {
+                opacity: 0.8;
+            }
         }
 
         &__subtitle {
             @extend %title-18;
             color: #737373;
+            transition: all 0.3s ease;
+            overflow: hidden;
+            max-height: 0;
+            opacity: 0;
+            margin-bottom: 0;
+
+            &.open {
+                max-height: 500px;
+                opacity: 1;
+                margin-bottom: 24px;
+            }
         }
     }
     }
