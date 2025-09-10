@@ -8,8 +8,20 @@
     grid-template-columns: 2.22fr 1fr;
     align-items: center;
 
-    & > img {
-        width: 100%;
-        height: auto;
+   
+    &__group {
+        display: flex;
+        align-items: center;
+        width: 819px;
+
+       
+        & > img {
+            margin-left: -160px;
+        }
+
+        & >:first-child {
+            margin-left: 0 !important;
+        }
+
     }
 }

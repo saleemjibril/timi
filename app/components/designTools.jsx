@@ -1,67 +1,151 @@
+"use client";
 import Image from "next/image";
+import { useRef } from "react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+// Register ScrollTrigger plugin
+gsap.registerPlugin(ScrollTrigger);
 
 export default function DesignTools() {
-    return (
-        <div className="home__design-tools">
-                <div className="home__design-tools__card1">
-                    My Design Tools
-                </div>
-                <div className="home__design-tools__card2">
-                    <div className="home__design-tools__card2__card">
-                        <Image src={"/assets/icons/figma.svg"} width={64} height={64} />
-                        <div>
-                            <div className="home__design-tools__card2__card__title">
-                                Figma
-                            </div>
-                            <div className="home__design-tools__card2__card__subtitle">
-                                For creating web, mobile interfaces and interactive prototypes.
-                            </div>
-                        </div>
-                    </div>
-                    <div className="home__design-tools__card2__card">
-                        <Image src={"/assets/icons/framer.svg"} width={64} height={64} />
-                        <div>
-                            <div className="home__design-tools__card2__card__title">
-                                Framer
-                            </div>
-                            <div className="home__design-tools__card2__card__subtitle">
-                                For production-ready websites and web applications
-                            </div>
-                        </div>
-                    </div>
-                    <div className="home__design-tools__card2__card">
-                        <Image src={"/assets/icons/figma.svg"} width={64} height={64} />
-                        <div>
-                            <div className="home__design-tools__card2__card__title">
-                                FigJam
-                            </div>
-                            <div className="home__design-tools__card2__card__subtitle">
-                                Used for early-stage ideation, user flow mapping.                        </div>
-                        </div>
-                    </div>
-                    <div className="home__design-tools__card2__card">
-                        <Image src={"/assets/icons/figma.svg"} width={64} height={64} />
-                        <div>
-                            <div className="home__design-tools__card2__card__title">
-                                Maze
-                            </div>
-                            <div className="home__design-tools__card2__card__subtitle">
-                                Used to simplify the process of identifying what works and what doesn't in design.                        </div>
-                        </div>
-                    </div>
-                    <div className="home__design-tools__card2__card">
-                        <Image src={"/assets/icons/team.svg"} width={64} height={64} />
-                        <div>
-                            <div className="home__design-tools__card2__card__title">
-                                Jira, Teams & Slack
-                            </div>
-                            <div className="home__design-tools__card2__card__subtitle">
-                                Used for communication, collaboration and manage workflows.
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    const mainContainerRef = useRef(null);
+    const containerRef = useRef(null);
+    const cardRefs = useRef([]);
 
+    useGSAP(() => {
+        const cards = cardRefs.current.filter(Boolean);
+        const container = containerRef.current;
+        
+        if (!container || cards.length === 0) return;
+
+        // Set initial positions for cards
+        gsap.set(cards, {
+            y: 0,
+            scale: 1,
+            transformOrigin: "center top"
+        });
+
+        // Create the stack animation with ScrollTrigger
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: mainContainerRef.current,
+                start: "top top",
+                end: () => `+=${(cards.length - 1) * window.innerHeight * 0.8}`, // Adjust multiplier for desired scroll distance
+                scrub: 1,
+                pin: true,
+                anticipatePin: 1,
+                invalidateOnRefresh: true,
+                onUpdate: (self) => {
+                    // Optional: Add any dynamic updates during scroll
+                }
+            }
+        });
+
+        // Animate cards to stack (except the first one)
+        cards.forEach((card, index) => {
+            if (index > 0) {
+                // Calculate the target position to stack at the first card's position
+                const firstCard = cards[0];
+                if (firstCard && card) {
+                    // Get initial positions
+                    const firstCardRect = firstCard.getBoundingClientRect();
+                    const currentCardRect = card.getBoundingClientRect();
+                    const targetY = firstCardRect.top - currentCardRect.top;
+                    
+                    tl.to(card, {
+                        y: targetY,
+                        scale: 1 - (index * 0.02), // Slightly scale down each subsequent card
+                        ease: "power2.inOut",
+                        duration: 1
+                    }, index * 0.2); // Stagger the animations
+                }
+            }
+        });
+
+        // Cleanup function
+        return () => {
+            ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+        };
+    }, { dependencies: [] });
+
+    return (
+        <div className="home__design-tools" ref={mainContainerRef}>
+            <div className="home__design-tools__card1">
+                My Design Tools
+            </div>
+            <div className="home__design-tools__card2" ref={containerRef}>
+                <div 
+                    className="home__design-tools__card2__card" 
+                    ref={(el) => (cardRefs.current[0] = el)}
+                >
+                    <Image src={"/assets/icons/figma.svg"} width={64} height={64} />
+                    <div>
+                        <div className="home__design-tools__card2__card__title">
+                            Figma
+                        </div>
+                        <div className="home__design-tools__card2__card__subtitle">
+                            For creating web, mobile interfaces and interactive prototypes.
+                        </div>
+                    </div>
+                </div>
+                <div 
+                    className="home__design-tools__card2__card" 
+                    ref={(el) => (cardRefs.current[1] = el)}
+                >
+                    <Image src={"/assets/icons/framer.svg"} width={64} height={64} />
+                    <div>
+                        <div className="home__design-tools__card2__card__title">
+                            Framer
+                        </div>
+                        <div className="home__design-tools__card2__card__subtitle">
+                            For production-ready websites and web applications
+                        </div>
+                    </div>
+                </div>
+                <div 
+                    className="home__design-tools__card2__card" 
+                    ref={(el) => (cardRefs.current[2] = el)}
+                >
+                    <Image src={"/assets/icons/figma.svg"} width={64} height={64} />
+                    <div>
+                        <div className="home__design-tools__card2__card__title">
+                            FigJam
+                        </div>
+                        <div className="home__design-tools__card2__card__subtitle">
+                            Used for early-stage ideation, user flow mapping.
+                        </div>
+                    </div>
+                </div>
+                <div 
+                    className="home__design-tools__card2__card" 
+                    ref={(el) => (cardRefs.current[3] = el)}
+                >
+                    <Image src={"/assets/icons/figma.svg"} width={64} height={64} />
+                    <div>
+                        <div className="home__design-tools__card2__card__title">
+                            Maze
+                        </div>
+                        <div className="home__design-tools__card2__card__subtitle">
+                            Used to simplify the process of identifying what works and what doesn't in design.
+                        </div>
+                    </div>
+                </div>
+                <div 
+                    className="home__design-tools__card2__card" 
+                    ref={(el) => (cardRefs.current[4] = el)}
+                >
+                    <Image src={"/assets/icons/team.svg"} width={64} height={64} />
+                    <div>
+                        <div className="home__design-tools__card2__card__title">
+                            Jira, Teams & Slack
+                        </div>
+                        <div className="home__design-tools__card2__card__subtitle">
+                            Used for communication, collaboration and manage workflows.
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    )
+    );
 }

@@ -21,31 +21,38 @@
         }
 
         &__grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 24px;
+            overflow: hidden;
             margin-bottom: 164px;
-
-
-            & > img {
-                width: 100%;
-                height: auto;
+            
+            .marquee-container {
+                display: flex;
+                gap: 24px;
+                width: 200%; // Double width for seamless loop
+                
+                & > img {
+                    flex-shrink: 0;
+                    width: 480px;
+                    height: auto;
+                }
             }
-
         }
 
         &__grid-mini {
-            display: grid;
-            align-items: center;
-            grid-template-columns: 1.4fr 1fr;
-            gap: 24px;
-
-
-            & > img {
-                width: 100%;
-                height: auto;
+            overflow: hidden;
+            
+            .marquee-container {
+                display: flex;
+                gap: 24px;
+                width: 200%; // Double width for seamless loop
+                align-items: center;
+                
+                & > img {
+                    flex-shrink: 0;
+                    width: 891px;
+                    height: 586px;
+                    object-fit: cover;
+                }
             }
-
         }
     }
 

@@ -25,44 +25,48 @@
 
     &__card {   
         box-shadow: 0px 4px 15px 0px #D021C526 inset;
+        box-shadow: 0px -4px 15px 0px #D021C526 inset;
+        height: 440px;
+        padding: 42px 64px;
+        border-radius: 30px;
+        margin-bottom: 82px;
+        overflow: hidden;
+        cursor: pointer;
 
-box-shadow: 0px -4px 15px 0px #D021C526 inset;
-display: flex;
-justify-content: space-between;
-gap: 26px;
-padding: 42px 64px;
-border-radius: 30px;
-margin-bottom: 82px;
+        &-marquee {
+            height: auto; // Natural height for ping-pong animation
+        }
 
-&__timeline {
-    @extend %title-32;
-    font-weight: 500;
-    color: #737373; 
-}
+        &-item {
+            display: flex;
+            justify-content: space-between;
+            gap: 26px;
+            margin-bottom: 20px;
+        }
+        &__timeline {
+            @extend %title-32;
+            font-weight: 500;
+            color: #737373; 
+        }
 
-&__inner {
-   
-
-    &__title {
-        @extend %title-32;
-        font-weight: 500;
-        margin-bottom: 8px;
-        
-    }
-    &__role {
-        @extend %title-24;
-        font-weight: 500;
-        margin-bottom: 16px;
-
-    }
-    &__subtitle {
-        @extend %title-24;
-        width: 100%;
-        max-width: 50ch;
-        margin-bottom: 16px;
-
-    }
-}
+        &__inner {
+            &__title {
+                @extend %title-32;
+                font-weight: 500;
+                margin-bottom: 8px;
+            }
+            &__role {
+                @extend %title-24;
+                font-weight: 500;
+                margin-bottom: 16px;
+            }
+            &__subtitle {
+                @extend %title-24;
+                width: 100%;
+                max-width: 50ch;
+                margin-bottom: 16px;
+            }
+        }
     }
 
     &__subtitle {

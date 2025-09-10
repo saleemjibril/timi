@@ -35,6 +35,32 @@
                 }
             }
 
+            &__title {
+                 @extend %title-48;
+                 width: 19ch;
+                font-weight: 600;
+
+                &__mask {
+                    overflow: hidden;
+                    display: block;
+                }
+
+                & > div > span {
+                    display: block;
+                }
+
+                &__inner-span {
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 8px;
+                    
+                    & > span {
+                        display: inline-flex;
+                        align-items: center;
+                    }
+                }
+            }
+
         }
 
         &__card2 {
@@ -70,8 +96,27 @@
     }
 
     &__bg {
+        color: transparent;
+        -webkit-text-stroke: 2px gray;
+        text-stroke: 2px gray;
+        font-size: 168px;
+        font-weight: bold;
+        margin: 20px 0;
         width: 100%;
-        height: auto;
-        margin-top: -40px;
+        white-space: nowrap;
+        font-family: var(--font-playfair-display);
+        opacity: 0.2;
+        overflow: hidden;
+        cursor: pointer;
+
+        & > span {
+            display: inline-block;
+            white-space: nowrap;
+        }
+
+        .marquee-text {
+            display: inline-block;
+            margin-right: 20px;
+        }
     }
 }

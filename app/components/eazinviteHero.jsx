@@ -1,6 +1,45 @@
+"use client";
 import Image from "next/image";
+import { useRef } from "react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
 export default function EazInviteHero(params) {
+    const imageRef = useRef(null);
+
+    useGSAP(() => {
+        const image = imageRef.current;
+        
+        if (image) {
+            const handleMouseEnter = () => {
+                gsap.to(image, {
+                    scale: 1.05,
+                    borderRadius: "24px",
+                    duration: 0.3,
+                    ease: "power2.out",
+                });
+            };
+
+            const handleMouseLeave = () => {
+                gsap.to(image, {
+                    scale: 1,
+                    borderRadius: "0px",
+                    duration: 0.3,
+                    ease: "power2.out",
+                });
+            };
+
+            image.addEventListener('mouseenter', handleMouseEnter);
+            image.addEventListener('mouseleave', handleMouseLeave);
+
+            // Cleanup
+            return () => {
+                image.removeEventListener('mouseenter', handleMouseEnter);
+                image.removeEventListener('mouseleave', handleMouseLeave);
+            };
+        }
+    });
+
     return (
         <div className="eazinvite__hero">
             <div className="eazinvite__hero__inner">
@@ -17,7 +56,7 @@ export default function EazInviteHero(params) {
 
                 </div>
 
-                <Image src={"/assets/eazinviteHero.svg"} width={600} height={646.15380859375} />
+                <Image src={"/assets/eazinviteHero.svg"} width={600} height={646.15380859375} ref={imageRef} />
             </div>
         </div>
     )

@@ -1,7 +1,107 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
+import { useRef } from "react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+// Register ScrollTrigger plugin
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Projects() {
+  const card1Ref = useRef(null);
+  const card2Ref = useRef(null);
+  const card3Ref = useRef(null);
+  const image1Ref = useRef(null);
+  const image2Ref = useRef(null);
+  const image3Ref = useRef(null);
+
+  useGSAP(() => {
+    // Set initial states - cards from left, images from right
+    gsap.set([card1Ref.current, card2Ref.current, card3Ref.current], {
+      x: -100,
+      opacity: 0,
+    });
+    
+    gsap.set([image1Ref.current, image2Ref.current, image3Ref.current], {
+      x: 100,
+      opacity: 0,
+    });
+
+    // Create scroll-triggered animations for each card
+    const cards = [
+      { card: card1Ref.current, image: image1Ref.current },
+      { card: card2Ref.current, image: image2Ref.current },
+      { card: card3Ref.current, image: image3Ref.current },
+    ];
+
+    cards.forEach(({ card, image }, index) => {
+      if (card && image) {
+        // Create timeline for each card
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: card.closest('.home__projects__card'),
+            start: "top 80%",
+            end: "bottom 20%",
+            toggleActions: "play none none reverse",
+          }
+        });
+
+        // Animate card from left and image from right
+        tl.to(card, {
+          x: 0,
+          opacity: 1,
+          duration: 0.8,
+          ease: "power2.out",
+        })
+        .to(image, {
+          x: 0,
+          opacity: 1,
+          duration: 0.8,
+          ease: "power2.out",
+        }, "-=0.6"); // Start 0.6 seconds before card animation ends
+
+        // Add hover animations for images
+        const handleMouseEnter = () => {
+          gsap.to(image, {
+            scale: 1.05,
+            borderRadius: "24px",
+            duration: 0.3,
+            ease: "power2.out",
+          });
+        };
+
+        const handleMouseLeave = () => {
+          gsap.to(image, {
+            scale: 1,
+            borderRadius: "0px",
+            duration: 0.3,
+            ease: "power2.out",
+          });
+        };
+
+        image.addEventListener('mouseenter', handleMouseEnter);
+        image.addEventListener('mouseleave', handleMouseLeave);
+
+        // Store cleanup functions for later use
+        image._hoverCleanup = () => {
+          image.removeEventListener('mouseenter', handleMouseEnter);
+          image.removeEventListener('mouseleave', handleMouseLeave);
+        };
+      }
+    });
+
+    // Cleanup function for hover events
+    return () => {
+      [image1Ref.current, image2Ref.current, image3Ref.current].forEach(image => {
+        if (image && image._hoverCleanup) {
+          image._hoverCleanup();
+        }
+      });
+    };
+  });
+
    return (
     <div className="home__projects">
     <div className="home__projects__title">
@@ -9,7 +109,7 @@ export default function Projects() {
     </div>
     
     <div className="home__projects__card">
-    <div className="home__projects__card__card1">
+    <div className="home__projects__card__card1" ref={card1Ref}>
     <div className="home__projects__card__card1__subsubtitle">
     (Web based platform)
         </div>
@@ -30,13 +130,13 @@ export default function Projects() {
     
         </div>
     
-        <Image src={"/assets/clichire.svg"} width={715} height={770} />
+        <Image src={"/assets/clichire.svg"} width={715} height={770} ref={image1Ref} />
     
     </div>
     <div className="home__projects__card">
-    <Image src={"/assets/demicare.svg"} width={715} height={770} />
+    <Image src={"/assets/demicare.svg"} width={715} height={770} ref={image2Ref} />
     
-    <div className="home__projects__card__card1">
+    <div className="home__projects__card__card1" ref={card2Ref}>
     <div className="home__projects__card__card1__subsubtitle">
     (Mobile app)
         </div>
@@ -62,7 +162,7 @@ export default function Projects() {
     <div className="home__projects__card">
 
     
-    <div className="home__projects__card__card1">
+    <div className="home__projects__card__card1" ref={card3Ref}>
     <div className="home__projects__card__card1__subsubtitle">
     (Web based platform)
         </div>
@@ -83,7 +183,7 @@ export default function Projects() {
     
         </div>
     
-        <Image src={"/assets/eazinvite.svg"} width={715} height={770} />
+        <Image src={"/assets/eazinvite.svg"} width={715} height={770} ref={image3Ref} />
        
     </div>
         </div>

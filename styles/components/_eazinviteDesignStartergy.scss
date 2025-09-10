@@ -46,10 +46,19 @@
     }
 
     &__tasks {
+        height: fit-content;
+        
         &__title {
             @extend %title-24;
             font-weight: 500;
             margin-bottom: 16px;
+        }
+        
+        &__inner {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
         }
 
         &__card {
@@ -82,6 +91,118 @@
                 margin-bottom: 82px;
             }
 
+            &__bg {
+                padding: 7px 60px 30px 60px;
+                background: #FFF5F0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                position: relative;
+                min-width: 656px;
+
+                &__slider-container {
+                    width: 100%;
+                    overflow: hidden;
+                    border-radius: 15px;
+                }
+
+                &__slider {
+                    display: flex;
+                    width: 300%; // 3 slides * 100%
+                    transition: transform 0.8s ease-in-out;
+                }
+
+                &__slide {
+                    width: 33.333%; // 100% / 3 slides
+                    flex-shrink: 0;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    & > img {
+                        width: 100%;
+                        max-width: 520px;
+                        height: auto;
+                    }
+                }
+
+                &__indicators {
+                    display: flex;
+                    gap: 8px;
+                    margin-top: 16px;
+                }
+
+                &__indicator {
+                    width: 8px;
+                    height: 8px;
+                    border-radius: 50%;
+                    background-color: #282828;
+                    opacity: 0.3;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+
+                    &:hover {
+                        opacity: 0.6;
+                    }
+                }
+            }
+
+            &__bg2 {
+                padding: 61px 68px 92px 68px;
+                background: #F8F0FF;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                position: relative;
+                min-width: 656px;
+
+                &__slider-container {
+                    width: 100%;
+                    overflow: hidden;
+                    border-radius: 15px;
+                }
+
+                &__slider {
+                    display: flex;
+                    width: 300%; // 3 slides * 100%
+                    transition: transform 0.8s ease-in-out;
+                }
+
+                &__slide {
+                    width: 33.333%; // 100% / 3 slides
+                    flex-shrink: 0;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    & > img {
+                        width: 100%;
+                        max-width: 520px;
+                        height: auto;
+                    }
+                }
+
+                &__indicators {
+                    display: flex;
+                    gap: 8px;
+                    margin-top: 16px;
+                }
+
+                &__indicator {
+                    width: 8px;
+                    height: 8px;
+                    border-radius: 50%;
+                    background-color: #282828;
+                    opacity: 0.3;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+
+                    &:hover {
+                        opacity: 0.6;
+                    }
+                }
+            }
+
             &__title {
                 @extend %title-48;
                 font-weight: 500;
@@ -107,10 +228,16 @@
             grid-template-columns: 1fr 1fr 1fr 1fr;
             gap: 24px;
 
+            
             &__card {
                 border: 1px solid var(--Stroke, #1C1C1C);
                 padding: 24px 16px;
                 border-radius: 15px;
+                cursor: pointer;
+                
+                &:hover {
+                    background: #282828;
+                }
 
                 &>img {
                     margin-bottom: 16px;

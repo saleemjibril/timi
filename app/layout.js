@@ -26,7 +26,7 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
-const playfaiDisplay = Playfair_Display({
+const playfairDisplay = Playfair_Display({
   weight: ["400", "500", "600", "700", "800", "900"],
   subsets: ["latin"],
   display: "swap",
@@ -51,7 +51,7 @@ export default function RootLayout({ children }) {
     <html
       lang="en"
       className={`
-       ${syne.variable} ${inter.variable} ${geist.variable} ${playfaiDisplay.variable}`}
+       ${syne.variable} ${inter.variable} ${geist.variable} ${playfairDisplay.variable}`}
     >
       <body>
         <Header />
