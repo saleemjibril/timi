@@ -2,4 +2,9 @@
   width: 100%;
 
     padding: 82px 0;
+    overflow: hidden;
+
+    @media (max-width: $phone) {
+        padding: 40px 0;
+    }
 }

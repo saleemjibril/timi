@@ -27,7 +27,7 @@ export default function StyleGuide({ subtitle, images }) {
 
             <Image className="style-guide__typography" src={images[2]} width={644} height={568} />
 
-            <Image className="style-guide__uicomponents" src={images[3]} width={644} height={568} />
+            {/* <Image className="style-guide__uicomponents" src={images[3]} width={644} height={568} /> */}
         </div>
     )
 }

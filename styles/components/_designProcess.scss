@@ -46,4 +46,29 @@
         }
 
     }
+
+    @media (max-width: $phone) {
+        padding: 48px 0;
+
+        &__inner {
+            grid-template-columns: 1fr;
+            gap: 24px;
+            padding: 0 16px;
+
+            &__image {
+                aspect-ratio: 3 / 2;
+                height: auto;
+            }
+
+            &__card {
+                &__title {
+                    font-size: 28px;
+                }
+
+                &__subtitle {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
 }

@@ -126,5 +126,79 @@
         gap: 24px;
     }
 
-    
+    @media (max-width: $phone) {
+        padding: 48px 16px;
+
+        &__grid {
+            grid-template-columns: 1fr;
+            margin-bottom: 64px;
+        }
+
+        &__title {
+            font-size: 28px;
+        }
+
+        &__card {
+            height: 420px;
+            padding: 24px 20px;
+
+            &-item {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            &__timeline {
+                font-size: 18px;
+            }
+
+            &__inner {
+                &__title {
+                    font-size: 20px;
+                }
+
+                &__role {
+                    font-size: 16px;
+                }
+
+                &__subtitle {
+                    font-size: 16px;
+                }
+            }
+        }
+
+        &__subtitle {
+            font-size: 22px;
+        }
+
+        &__skillset {
+            grid-template-columns: 1fr;
+            padding: 20px;
+            gap: 20px;
+        }
+
+        &__soft-grid-cover {
+            padding: 20px;
+        }
+
+        &__soft-grid {
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        &__soft-grid-mini {
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+
+        &__soft-card {
+            height: auto;
+            min-height: 160px;
+            padding: 20px;
+
+            &__title {
+                font-size: 16px;
+            }
+        }
+    }
 }

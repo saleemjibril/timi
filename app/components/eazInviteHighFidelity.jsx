@@ -27,7 +27,7 @@ export default function EazInviteHighFidelity() {
                     The dashboard provides a clear overview of ongoing activity which includes an RSVP tracking table to monitor guest responses in real-time and showcases recently updated invitation templates with their edit timestamps helping users stay informed and take timely action.
                 </div>
 
-                <div className="sketching__view__grid" style={{background: "#0D470F", padding: "64px 80px"}}>
+                <div className="sketching__view__grid sketching__framed">
                     <Image src="/assets/eazinviteHigh1.svg" width={340} height={241.77777099609375} />
                     <Image src="/assets/eazinviteHigh2.svg" width={340} height={241.77777099609375} />
                     <Image src="/assets/eazinviteHigh3.svg" width={340} height={241.77777099609375} />
@@ -39,7 +39,7 @@ export default function EazInviteHighFidelity() {
                     This feature allows users to select from a variety of professionally designed templates and personalize them to suit their event needs editing text, colors, and layout without starting from scratch
                 </div>
 
-                <div className="sketching__view__grid" style={{background: "#0D470F", padding: "64px 80px"}}>
+                <div className="sketching__view__grid sketching__framed">
                     <Image src="/assets/eazinviteHigh4.svg" width={340} height={241.77777099609375} />
                     <Image src="/assets/eazinviteHigh5.svg" width={340} height={241.77777099609375} />
                     <Image src="/assets/eazinviteHigh6.svg" width={340} height={241.77777099609375} />
@@ -60,7 +60,7 @@ export default function EazInviteHighFidelity() {
                 Here, users can manage all aspects of sending out invites, track which ones have been delivered or opened, and monitor RSVP responses in one organized view.
                 </div>
 
-                <div className="sketching__view__grid" style={{background: "#0D470F", padding: "64px 80px"}}>
+                <div className="sketching__view__grid sketching__framed">
                     <Image src="/assets/eazinviteHigh16.svg" width={340} height={241.77777099609375} />
                     <Image src="/assets/eazinviteHigh17.svg" width={340} height={241.77777099609375} />
                     <Image src="/assets/eazinviteHigh18.svg" width={340} height={241.77777099609375} />
@@ -84,7 +84,7 @@ export default function EazInviteHighFidelity() {
                 Users can easily add, edit, or remove guests, tag them (e.g., VIP), and view real-time RSVP updates—ensuring seamless guest coordination for every event.
                 </div>
 
-                <div className="sketching__view__grid-mini" style={{background: "#0D470F", padding: "64px 80px"}}>
+                <div className="sketching__view__grid-mini sketching__framed">
                 <Image src="/assets/eazinviteHigh31.svg" width={340} height={241.77777099609375} />
                 <Image src="/assets/eazinviteHigh32.svg" width={340} height={241.77777099609375} />
                 <Image src="/assets/eazinviteHigh33.svg" width={340} height={241.77777099609375} />
@@ -98,7 +98,7 @@ export default function EazInviteHighFidelity() {
                 This section showcases the guest journey from receiving the invite email, viewing event details, completing the RSVP form, to accessing a personalized event card with a QR code for seamless check-in.
                 </div>
 
-                <div className="sketching__view__grid" style={{background: "#0D470F", padding: "64px 80px"}}>
+                <div className="sketching__view__grid sketching__framed">
                 <Image src="/assets/eazinviteHigh35.svg" width={340} height={511.8888854980469} />
                 <Image src="/assets/eazinviteHigh36.svg" width={340} height={511.8888854980469} />
                 <Image src="/assets/eazinviteHigh37.svg" width={340} height={690.625} />

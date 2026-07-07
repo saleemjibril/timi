@@ -70,8 +70,68 @@
                 width: 100%;
                 height: auto;
             }
+        }
+    }
 
+    @media (max-width: $phone) {
+        &__inner {
+            padding: 48px 16px;
 
+            &__title {
+                font-size: 28px;
+            }
+
+            &__subtitle {
+                font-size: 16px;
+            }
+
+            &__card {
+                padding: 24px 16px;
+                margin-bottom: 32px;
+
+                &__title {
+                    font-size: 22px;
+                }
+
+                &__subtitle {
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+}
+
+.demicare__scan-face {
+    position: relative;
+    width: 100%;
+
+    & > img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    &__viewfinder {
+        position: absolute;
+        left: 44.346%;
+        top: 32.589%;
+        width: 11.583%;
+        height: 20.348%;
+        overflow: hidden;
+        border-radius: 3.96%;
+        pointer-events: none;
+    }
+
+    &__glare {
+        position: absolute;
+        left: 3.962%;
+        top: 2.844%;
+        width: 92.08%;
+
+        & > img {
+            width: 100%;
+            height: auto;
+            display: block;
         }
     }
 }

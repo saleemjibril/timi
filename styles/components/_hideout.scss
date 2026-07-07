@@ -9,7 +9,14 @@
     align-items: center;
 
    
+    & > img {
+        position: relative;
+        z-index: 2;
+    }
+
     &__group {
+        position: relative;
+        z-index: 1;
         display: flex;
         align-items: center;
         width: 819px;
@@ -23,5 +30,35 @@
             margin-left: 0 !important;
         }
 
+    }
+
+    @media (max-width: $phone) {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        justify-items: center;
+        padding: 48px 16px;
+
+        &__group {
+            width: 100%;
+            max-width: 100%;
+            flex-direction: column;
+            align-items: stretch;
+            gap: 12px;
+
+            & > img {
+                width: 100%;
+                height: auto;
+                margin-left: 0;
+            }
+
+            & >:first-child {
+                margin-left: 0 !important;
+            }
+        }
+
+        & > img {
+            width: 240px;
+            height: auto;
+        }
     }
 }

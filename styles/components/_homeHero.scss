@@ -1,13 +1,16 @@
 .home__hero {
     width: 100%;
-    max-width: 1352px;
-    margin: 0 auto;
-    padding: 0 20px;
+
     &__group {
+        max-width: 1352px;
+        margin: 0 auto;
+        padding: 0 20px;
         display: flex;
         gap: 42px;
         margin-bottom: 82px;
         &__card1 {
+            flex-shrink: 0;
+
             &__pills {
                 display: flex;
                 align-items: center;
@@ -37,27 +40,34 @@
 
             &__title {
                  @extend %title-48;
-                 width: 19ch;
+                font-family: var(--font-primary);
                 font-weight: 600;
 
                 &__mask {
                     overflow: hidden;
                     display: block;
+
+                    &:last-child {
+                        padding-bottom: 18px;
+                        margin-bottom: -18px;
+                    }
                 }
 
-                & > div > span {
+                & > div:not(:last-child) > span {
                     display: block;
+                    white-space: nowrap;
                 }
 
                 &__inner-span {
                     display: inline-flex;
                     align-items: center;
                     gap: 8px;
+                    white-space: nowrap;
                     
                     & > span {
                         display: inline-flex;
                         align-items: center;
-                        transform: translateY(15px)
+                        transform: translateY(15px);
                     }
                 }
             }
@@ -86,9 +96,13 @@
 
     &__image-grid {
         width: 100%;
+        max-width: 1352px;
+        margin: 0 auto;
+        padding: 0 20px;
         display: grid;
         grid-template-columns: 1fr 1.3fr 1fr;
         gap: 24px;
+        
 
         & > img {
             width: 100%;
@@ -118,6 +132,49 @@
         .marquee-text {
             display: inline-block;
             margin-right: 20px;
+        }
+    }
+
+    @media (max-width: $phone) {
+        &__group {
+            flex-direction: column;
+            gap: 24px;
+            margin-bottom: 48px;
+
+            &__card1 {
+                &__pills {
+                    flex-wrap: wrap;
+                    gap: 12px;
+                }
+
+                &__title {
+                    font-size: 26px;
+
+                    &__inner-span > span > svg {
+                        width: 96px;
+                        height: auto;
+                    }
+                }
+            }
+
+            &__card2 {
+                & > div {
+                    font-size: 16px;
+                }
+
+                & > button {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        &__image-grid {
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+
+        &__bg {
+            font-size: 64px;
         }
     }
 }

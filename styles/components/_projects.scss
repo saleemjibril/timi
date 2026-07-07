@@ -34,11 +34,38 @@
             &__button {
                 border-radius: 26px;
                 background: #333333;
-                padding: 6px 16px;
-                width: 200px;
+                padding: 4px 4px;
+                width: fit-content;
                 height: 60px;
                 display: block;
-
+                position: relative;
+            
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    border-radius: 40px;
+                    background: #333333;
+                    width: 200px;
+                    height: 64px;
+                    display: block;
+                    z-index: -1;
+                    // filter: blur(15px); // Add blur for glow effect
+                    
+                    animation: glow-pulse 2s ease-in-out infinite;
+            
+                    @keyframes glow-pulse {
+                        0%, 100% {
+                            opacity: 0.3;
+                        }
+                        50% {
+                            opacity: 1;
+                        }
+                    }
+                }
+            
                 & > button {
                     @extend %primary-button;
                     font-family: var(--font-playfair-display);
@@ -51,6 +78,67 @@
         & > img {
             width: 100%;
             height: auto;
+        }
+
+        &__bg {
+            min-width: 715px;
+            background: radial-gradient(55.93% 54.22% at 48.6% 67.6%, #05B30B 0%, #0D470F 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+            height: 770px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: end;
+            overflow: hidden;
+            border-radius: 0;
+            transition: border-radius 0.3s ease;
+
+            &:hover {
+                border-radius: 24px;
+
+                & > img {
+                    transform: scale(1.09);
+                }
+            }
+            
+            & > img {
+                width: 100%;
+                height: auto;
+                transform-origin: center bottom;
+                transition: transform 0.3s ease;
+            }
+    
+        }
+    }
+
+    @media (max-width: $phone) {
+        padding: 48px 16px;
+
+        &__title {
+            font-size: 28px;
+            margin-bottom: 32px;
+        }
+
+        &__card {
+            flex-direction: column;
+            gap: 24px;
+            margin-bottom: 64px;
+
+            &__card1 {
+                &__title {
+                    font-size: 28px;
+                }
+
+                &__subtitle {
+                    font-size: 16px;
+                }
+            }
+
+            &__bg {
+                min-width: 0;
+                width: 100%;
+                height: auto;
+                padding-top: 40px;
+            }
         }
     }
 }

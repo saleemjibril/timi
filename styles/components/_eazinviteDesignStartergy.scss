@@ -9,6 +9,7 @@
         gap: 20px;
         justify-content: space-between;
         margin-bottom: 64px;
+        align-items: center;
 
         &__title {
             @extend %title-48;
@@ -72,24 +73,26 @@
             gap: 48px;
             margin-bottom: 24px;
             color: #000;
+            position: sticky;
 
             &:nth-child(2) {
                 background: #E6FFE7;
-
+                top: 90px;
             }
 
             &:nth-child(3) {
                 background: #DEE1FF;
-
+                top: 120px;
             }
 
             &:nth-child(4) {
                 background: #FFEDE3;
+                top: 150px;
             }
 
             &:last-child {
                 background: #F1E0FF;
-
+                top: 180px;
                 margin-bottom: 82px;
             }
 
@@ -239,6 +242,15 @@
                 
                 &:hover {
                     background: #282828;
+                    border-color: #282828;
+
+                    .eazinvite__problem__cards__card__title {
+                        color: #FAFAFA;
+                    }
+
+                    .eazinvite__problem__cards__card__subtitle {
+                        color: #787878;
+                    }
                 }
 
                 &>img {
@@ -257,6 +269,63 @@
             }
         }
 
+    @media (max-width: $phone) {
+        padding: 48px 16px;
 
-    
+        &__title-group {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 48px;
+
+            &__title {
+                font-size: 28px;
+                white-space: normal;
+            }
+
+            &__subtitle {
+                font-size: 16px;
+            }
+        }
+
+        &__tasks {
+            &__title {
+                font-size: 18px;
+            }
+
+            &__card {
+                flex-direction: column;
+                gap: 24px;
+                padding: 24px;
+                position: static;
+
+                &__title {
+                    font-size: 24px;
+                }
+
+                &__subtitle {
+                    font-size: 16px;
+                }
+
+                &__bg,
+                &__bg2 {
+                    min-width: 0;
+                    width: 100%;
+                    padding: 24px 16px;
+                }
+            }
+        }
+
+        &__cards {
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+
+            &__card {
+                &__title {
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+
 }

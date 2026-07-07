@@ -1,0 +1,12 @@
+.demicare__analytics {
+    position: relative;
+    width: 100%;
+    background: #e8ab9b;
+    overflow: hidden;
+
+    &__phone {
+        position: absolute;
+        height: auto;
+        display: block;
+    }
+}

@@ -34,4 +34,21 @@
         width: 100%;
         height: auto;
     }
+
+    @media (max-width: $phone) {
+        flex-direction: column;
+        gap: 24px;
+        padding: 48px 16px;
+        margin-bottom: 48px;
+
+        &__card1 {
+            &__title {
+                font-size: 28px;
+            }
+
+            &__subtitle {
+                font-size: 16px;
+            }
+        }
+    }
 }

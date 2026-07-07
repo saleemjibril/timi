@@ -80,4 +80,54 @@ margin-bottom: 24px;
         }
         }
     }
+
+    &__framed {
+        background: #0D470F;
+        padding: 64px 80px;
+
+        @media (max-width: $phone) {
+            padding: 24px 16px;
+        }
+    }
+
+    @media (max-width: $phone) {
+        padding: 48px 16px;
+
+        &__title {
+            font-size: 28px;
+        }
+
+        &__subtitle {
+            font-size: 16px;
+        }
+
+        &__title-button {
+            margin-bottom: 40px;
+        }
+
+        &__tab-label {
+            font-size: 18px;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        &__view {
+            padding: 24px 16px 0 16px;
+
+            &__title {
+                font-size: 22px;
+            }
+
+            &__subtitle {
+                font-size: 15px;
+            }
+
+            &__grid,
+            &__grid-mini {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+        }
+    }
 }

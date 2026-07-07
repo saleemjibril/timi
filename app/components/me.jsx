@@ -28,7 +28,7 @@ export default function Me() {
             const lastCardHeight = marqueeRef.current.lastElementChild.offsetHeight;
             
             // Move enough to show the last card completely, plus a small buffer
-            return -(marqueeHeight - containerHeight + lastCardHeight * 0.1);
+            return -(marqueeHeight - containerHeight + lastCardHeight * 0.3);
           },
           duration: 8,
           ease: "power2.inOut",

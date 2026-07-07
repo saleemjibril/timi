@@ -1,59 +1,91 @@
 .home__design-exploration {
-    padding: 82px 0;
-    background: #282828;
+  padding: 82px 0;
+  background: #282828;
 
-    &__inner {
-        width: 100%;
-        max-width: 1352px;
-        margin: 0 auto;
-        &__title {
-            @extend %title-48;
-            font-weight: 600;
-            text-align: center;
-            margin-bottom: 42px;
-        }
-        &__link{
-            @extend %title-24;
-            font-weight: 400;
-            text-decoration: underline;
-            margin-bottom: 24px;
-            padding: 0 20px;
-        }
+  &__inner {
+    width: 100%;
 
-        &__grid {
-            overflow: hidden;
-            margin-bottom: 164px;
-            
-            .marquee-container {
-                display: flex;
-                gap: 24px;
-                width: 200%; // Double width for seamless loop
-                
-                & > img {
-                    flex-shrink: 0;
-                    width: 480px;
-                    height: auto;
-                }
-            }
-        }
-
-        &__grid-mini {
-            overflow: hidden;
-            
-            .marquee-container {
-                display: flex;
-                gap: 24px;
-                width: 200%; // Double width for seamless loop
-                align-items: center;
-                
-                & > img {
-                    flex-shrink: 0;
-                    width: 891px;
-                    height: 586px;
-                    object-fit: cover;
-                }
-            }
-        }
+    &__title {
+      @extend %title-48;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 42px;
+    }
+    &__link {
+      @extend %title-24;
+      max-width: 1352px;
+      margin: 0 auto;
+      font-weight: 400;
+      text-decoration: underline;
+      margin-bottom: 24px;
+      padding: 0 20px;
     }
 
+    &__grid {
+      overflow: hidden;
+      margin-bottom: 164px;
+
+      .marquee-container {
+        display: flex;
+        gap: 24px;
+        width: 200%; // Double width for seamless loop
+
+        & > img {
+          flex-shrink: 0;
+          width: 480px;
+          height: auto;
+        }
+      }
+    }
+
+    &__grid-mini {
+      overflow: hidden;
+
+      .marquee-container {
+        display: flex;
+        gap: 24px;
+        width: 200%; // Double width for seamless loop
+        align-items: center;
+
+        & > img {
+          flex-shrink: 0;
+          width: 891px;
+          height: 586px;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+
+  @media (max-width: $phone) {
+    padding: 48px 0;
+
+    &__inner {
+      &__title {
+        font-size: 28px;
+        margin-bottom: 24px;
+      }
+
+      &__link {
+        font-size: 18px;
+        padding: 0 16px;
+      }
+
+      &__grid {
+        margin-bottom: 64px;
+
+        .marquee-container > img {
+          width: 260px;
+          height: auto;
+        }
+      }
+
+      &__grid-mini {
+        .marquee-container > img {
+          width: 300px;
+          height: auto;
+        }
+      }
+    }
+  }
 }

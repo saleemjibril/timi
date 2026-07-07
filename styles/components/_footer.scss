@@ -79,4 +79,40 @@
         }
     }
 
+    @media (max-width: $phone) {
+        margin-top: 96px;
+
+        &__inner {
+            padding: 48px 16px 0 16px;
+
+            &__title-group {
+                &__social-group {
+                    gap: 12px;
+                    flex-wrap: wrap;
+                }
+            }
+
+            &__group {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 24px;
+
+                &__title {
+                    font-size: 28px;
+                }
+
+                &__button {
+                    margin-bottom: 24px;
+                }
+
+                &__links {
+                    font-size: 18px;
+                }
+            }
+
+            &__bg {
+                font-size: 72px;
+            }
+        }
+    }
 }

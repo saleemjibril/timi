@@ -39,5 +39,21 @@
     }
     }
 
+    @media (max-width: $phone) {
+        &__inner {
+            padding: 48px 16px;
 
+            &__title {
+                font-size: 28px;
+            }
+
+            &__grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            &__grid-mini {
+                grid-template-columns: 1fr;
+            }
+        }
+    }
 }

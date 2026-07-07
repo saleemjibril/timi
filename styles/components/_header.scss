@@ -35,4 +35,14 @@
 
  
  }
+
+  @media (max-width: $phone) {
+    &__inner {
+      padding: 0 16px;
+
+      &__links {
+        display: none;
+      }
+    }
+  }
 }

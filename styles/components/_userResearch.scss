@@ -37,5 +37,22 @@
     }
     }
 
-    
+    @media (max-width: $phone) {
+        &__inner {
+            grid-template-columns: 1fr;
+            padding: 0 16px;
+
+            &__card {
+                padding: 24px 20px;
+
+                &__title {
+                    font-size: 20px;
+                }
+
+                &__subtitle {
+                    font-size: 15px;
+                }
+            }
+        }
+    }
 }

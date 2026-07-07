@@ -55,4 +55,32 @@
             }
         }
     }
+
+    @media (max-width: $phone) {
+        &__inner {
+            padding: 48px 16px;
+
+            &__title {
+                font-size: 24px;
+                text-align: center;
+            }
+
+            &__subtitle {
+                font-size: 18px;
+            }
+
+            &__button-group {
+                flex-direction: column;
+                width: 100%;
+                gap: 16px;
+
+                & >:first-child,
+                & >:last-child {
+                    width: 100%;
+                    justify-content: center;
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
 }

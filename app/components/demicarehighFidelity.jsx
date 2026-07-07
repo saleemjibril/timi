@@ -1,5 +1,7 @@
 "use client";
 import Image from "next/image";
+import DemicareScanFaceScreen from "./demicareScanFaceScreen";
+import DemicareAnalyticsScreens from "./demicareAnalyticsScreens";
 
 export default function DemicarehighFidelity() {
     return (
@@ -40,7 +42,7 @@ export default function DemicarehighFidelity() {
                 The Scan Face screen is the first step for new users after onboarding. Here, they’re prompted to scan their face so the AI can analyze their skin and provide insights. After a 60-second scan, users see their results. They can also choose to skip this step and return later.
                 </div>
 
-                <Image src="/assets/demicarehighFidelity2.svg" width={1184} height={704} />
+                <DemicareScanFaceScreen />
 
             </div>
             <div className="demicare__high-fidelity__inner__card">
@@ -67,7 +69,7 @@ export default function DemicarehighFidelity() {
                 The Analytics screen provides users with a detailed overview of their skincare progress. It displays consistency, streaks, and routine completion, alongside AI-driven insights like scan results, skin health scores, and comparisons across Day 0, 14, and 21.
                 </div>
 
-                <Image src="/assets/demicarehighFidelity5.svg" width={1184} height={704} />
+                <DemicareAnalyticsScreens />
 
             </div>
             <div className="demicare__high-fidelity__inner__card">

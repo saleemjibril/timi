@@ -24,8 +24,6 @@ export default function EazinviteDesignStartergy() {
     const indicators1 = indicators1Ref.current;
     const slider2 = slider2Ref.current;
     const indicators2 = indicators2Ref.current;
-    const tasksContainer = tasksContainerRef.current;
-    const cards = cardRefs.current.filter(Boolean);
 
     let interval1, interval2;
 
@@ -95,60 +93,8 @@ export default function EazinviteDesignStartergy() {
       interval2 = setInterval(autoSlide2, 4500); // Slightly different timing
     }
 
-    // Stack animation logic
-   // Stack animation logic
-if (tasksContainer && cards.length > 1) {
-    // Set initial positions - cards should be stacked naturally in their original positions
-    gsap.set(cards, { 
-      y: 0,
-      scale: 1,
-      transformOrigin: "center top"
-    });
-  
-    // Calculate the original height of the container
-    const originalHeight = tasksContainer.offsetHeight;
-    const firstCardHeight = cards[0].offsetHeight;
-    
-    // Calculate the final height (height of first card + some padding)
-    const finalHeight = firstCardHeight + 100; // Adjust padding as needed
-  
-    // Create the stack animation timeline
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: tasksContainer,
-        start: "top top",
-        end: () => `+=${(cards.length - 1) * window.innerHeight}`,
-        scrub: 1,
-        pin: true,
-        anticipatePin: 1,
-        invalidateOnRefresh: true,
-      }
-    });
-  
-    // Animate the container height
-    tl.to(tasksContainer, {
-      height: finalHeight,
-      ease: "power2.inOut",
-      duration: cards.length * 0.3 // Match the total duration of card animations
-    }, 0);
-  
-    // Animate cards to stack up (except the first one)
-    cards.forEach((card, index) => {
-      if (index > 0) {
-        // Calculate the target position to stack at the first card's position
-        const firstCardRect = cards[0].getBoundingClientRect();
-        const currentCardRect = card.getBoundingClientRect();
-        const targetY = firstCardRect.top - currentCardRect.top;
-        
-        tl.to(card, {
-          y: targetY,
-          scale: 1, // Keep all cards the same size
-          ease: "power2.inOut",
-          duration: 1
-        }, index * 0.3); // Stagger the animations
-      }
-    });
-  }
+    // Card stacking is handled purely with CSS `position: sticky` (see _eazinviteDesignStartergy.scss),
+    // which keeps each card flush as it pins to the top on scroll.
 
     // Cleanup function
     return () => {
