@@ -5,6 +5,14 @@ import EazInviteProblem from "../components/eazinviteProblem";
 import HomeHireMe from "../components/homeHireMe";
 import StyleGuide from "../components/styleGuide";
 
+export async function generateMetadata() {
+  return {
+    title: "Eazinvite Case Study",
+    description:
+      "Digital event invitation platform case study — problem framing, design strategy, and high-fidelity designs for RSVP tracking, templates, and guest management.",
+  };
+}
+
 export default function EazInvite(params) {
     return (
        <>

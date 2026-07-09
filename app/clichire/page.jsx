@@ -10,9 +10,9 @@ import HireMe from "../components/hireMe";
 
 export async function generateMetadata() {
   return {
-    title: "Home",
+    title: "Clichire Case Study",
     description:
-      "Project Management, Engineering Construction & Design, Supply of Integrated Services, Supervision, Environmental Consultancy",
+      "End-to-end recruitment platform case study — from competitive analysis and user flows to high-fidelity designs for professional and enterprise hiring teams.",
   };
 }
 

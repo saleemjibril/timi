@@ -8,6 +8,14 @@ import DemicareWhatsNext from "../components/demicareWhatsNext";
 import HomeHireMe from "../components/homeHireMe";
 import StyleGuide from "../components/styleGuide";
 
+export async function generateMetadata() {
+  return {
+    title: "DemiCare Case Study",
+    description:
+      "AI-powered skincare app case study — user personas, competitive analysis, low and high-fidelity mobile designs for routine tracking and face-scan insights.",
+  };
+}
+
 export default function Demicare() {
     return (
        <>

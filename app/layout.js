@@ -4,6 +4,15 @@ import localFont from "next/font/local";
 import Header from "./components/header";
 import Footer from "./components/footer";
 
+export const metadata = {
+  title: {
+    default: "Ololade.designs — Timilehin | Product Designer",
+    template: "%s | Ololade.designs",
+  },
+  description:
+    "Product designer helping businesses move from idea to launch. Specializing in UX research, product strategy, and high-fidelity design across web and mobile.",
+};
+
 // const silkFlower = localFont({
 //   src: "../public/assets/SilkFlower.woff2",
 //   subsets: ["latin"],

@@ -12,9 +12,11 @@ import HomeHireMe from "./components/homeHireMe";
 
 export async function generateMetadata() {
   return {
-    title: "Home",
+    title: {
+      absolute: "Ololade.designs — Timilehin | Product Designer",
+    },
     description:
-      "Project Management, Engineering Construction & Design, Supply of Integrated Services, Supervision, Environmental Consultancy",
+      "Product designer helping businesses move from idea to launch. Explore case studies in recruitment, skincare, and event management — plus design exploration, tools, and process.",
   };
 }
 
