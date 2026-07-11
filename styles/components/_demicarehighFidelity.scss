@@ -104,22 +104,55 @@
 .demicare__scan-face {
     position: relative;
     width: 100%;
+    background: #e8ab9b;
+    overflow: hidden;
 
-    & > img {
-        width: 100%;
+    &__phone {
+        position: absolute;
         height: auto;
-        display: block;
+
+        & > img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    }
+
+    &__scroll {
+        position: absolute;
+        overflow-x: hidden;
+        overflow-y: auto;
+        border-radius: 0 0 4% 4%;
+        z-index: 1;
+        background: #fff;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    &__scroll-inner {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+
+        & > img {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: auto;
+            display: block;
+        }
     }
 
     &__viewfinder {
         position: absolute;
-        left: 44.346%;
-        top: 32.589%;
-        width: 11.583%;
-        height: 20.348%;
         overflow: hidden;
         border-radius: 3.96%;
         pointer-events: none;
+        z-index: 2;
     }
 
     &__glare {
@@ -129,6 +162,53 @@
         width: 92.08%;
 
         & > img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    }
+}
+
+.demicare__home {
+    position: relative;
+    width: 100%;
+    background: #e8ab9b;
+    overflow: hidden;
+
+    &__phone {
+        position: absolute;
+        height: auto;
+
+        & > img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    }
+
+    &__scroll {
+        position: absolute;
+        overflow-x: hidden;
+        overflow-y: auto;
+        border-radius: 0 0 4% 4%;
+        z-index: 1;
+        background: #fff;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    &__scroll-inner {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+
+        & > img {
+            position: absolute;
+            left: 0;
             width: 100%;
             height: auto;
             display: block;

@@ -4,48 +4,48 @@ const PHONE = { w: 280, h: 577 };
 const PHONES = [
     {
         id: "left",
-        src: "/assets/analyticsScreen1.svg",
+        src: "/assets/homeScreen1.svg",
         x: 124,
         y: 64,
         w: 280,
         scroll: {
-            src: "/assets/analyticsScreen1FullScreen.svg",
-            region: { x: 13.2051, y: 194.99, w: 254.59 },
+            src: "/assets/homeScreenFullScreen.svg",
+            region: { x: 13.2051, y: 99.2646, w: 254.59 },
             tabBarY: 495.25,
-            contentEndY: 484.388,
+            contentEndY: 485.948,
             fullScreen: {
                 w: 375,
-                h: 994,
-                scrollStartY: 268.5,
-                tabBarY: 893,
+                h: 1275,
+                scrollStartY: 128,
+                tabBarY: 1174,
             },
         },
     },
     {
         id: "middle",
-        src: "/assets/analyticsScreen2.svg",
+        src: "/assets/homeScreen2.svg",
         x: 452,
         y: 64,
         w: 280,
-        scroll: {
-            src: "/assets/analyticsScreen2FullScreen.svg",
-            region: { x: 13, y: 206.249, w: 254.59 },
-            tabBarY: 494.887,
-            contentEndY: 484.024,
-            fullScreen: {
-                w: 375,
-                h: 1023,
-                scrollStartY: 268,
-                tabBarY: 922,
-            },
-        },
     },
     {
         id: "right",
-        src: "/assets/analyticsScreen3.svg",
+        src: "/assets/homeScreen3.svg",
         x: 780,
         y: 64,
         w: 280,
+        scroll: {
+            src: "/assets/homeScreen3FullScreen.svg",
+            region: { x: 13.2051, y: 90.6218, w: 254.59 },
+            tabBarY: 496.25,
+            contentEndY: 485.388,
+            fullScreen: {
+                w: 375,
+                h: 1237,
+                scrollStartY: 84.15,
+                tabBarY: 1136,
+            },
+        },
     },
 ];
 
@@ -69,10 +69,10 @@ const getScrollMetrics = (scroll) => {
     };
 };
 
-export default function DemicareAnalyticsScreens() {
+export default function DemicareHomeScreen() {
     return (
         <div
-            className="demicare__analytics"
+            className="demicare__home"
             style={{ aspectRatio: `${CANVAS.w} / ${CANVAS.h}` }}
         >
             {PHONES.map((phone) => {
@@ -82,18 +82,18 @@ export default function DemicareAnalyticsScreens() {
                 return (
                     <div
                         key={phone.id}
-                        className={`demicare__analytics__phone demicare__analytics__phone--${phone.id}`}
+                        className={`demicare__home__phone demicare__home__phone--${phone.id}`}
                         style={{
                             left: `${(phone.x / CANVAS.w) * 100}%`,
                             top: `${(phone.y / CANVAS.h) * 100}%`,
                             width: `${(phone.w / CANVAS.w) * 100}%`,
                         }}
                     >
-                        <img src={phone.src} alt="Analytics screen design" />
+                        <img src={phone.src} alt="Home screen design" />
 
                         {scroll && (
                             <div
-                                className="demicare__analytics__scroll"
+                                className="demicare__home__scroll"
                                 style={{
                                     left: `${(scroll.region.x / PHONE.w) * 100}%`,
                                     top: `${(scroll.region.y / PHONE.h) * 100}%`,
@@ -102,14 +102,14 @@ export default function DemicareAnalyticsScreens() {
                                 }}
                             >
                                 <div
-                                    className="demicare__analytics__scroll-inner"
+                                    className="demicare__home__scroll-inner"
                                     style={{
                                         aspectRatio: `${scroll.fullScreen.w} / ${scrollMetrics.scrollableHeight}`,
                                     }}
                                 >
                                     <img
                                         src={scroll.src}
-                                        alt="Analytics screen scrollable content"
+                                        alt="Home screen scrollable content"
                                         style={{
                                             top: `calc(-${scroll.fullScreen.scrollStartY} / ${scrollMetrics.scrollableHeight} * 100%)`,
                                         }}

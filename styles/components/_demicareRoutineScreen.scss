@@ -1,0 +1,85 @@
+.demicare__routine {
+    position: relative;
+    width: 100%;
+    background: #e8ab9b;
+    overflow: hidden;
+
+    $phone-w: 280;
+    $phone-h: 577;
+    $row-x: 24.0674;
+    $row-w: 232.865;
+    $row-h: 54.9914;
+    $swipe-offset: 40.7569;
+    $delete-svg-w: 275;
+    $delete-strip-w: 52;
+
+    &__phone {
+        position: absolute;
+        height: auto;
+
+        & > img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    }
+
+    &__swipe-track {
+        position: absolute;
+        left: percentage($row-x / $phone-w);
+        width: percentage($row-w / $phone-w);
+        height: percentage($row-h / $phone-h);
+        overflow: hidden;
+        border-radius: percentage(5.43125 / $row-w);
+        background: #fafafa;
+        z-index: 1;
+    }
+
+    &__delete-action {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 0;
+        width: percentage($delete-strip-w / $row-w);
+        height: 100%;
+        padding: 0;
+        border: 0;
+        background-color: #fafafa;
+        background-image: url("/assets/routineScreen1DeleteInteraction.svg");
+        background-repeat: no-repeat;
+        background-size: percentage($delete-svg-w / $delete-strip-w) auto;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.2s ease;
+
+        &--visible {
+            opacity: 1;
+            pointer-events: auto;
+            cursor: pointer;
+        }
+    }
+
+    &__swipe-card {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        background-image: url("/assets/routineScreen1.svg");
+        background-repeat: no-repeat;
+        background-size: percentage($phone-w / $row-w) auto;
+        transition: transform 0.28s ease;
+        will-change: transform;
+
+        &--swiped {
+            transform: translateX(percentage(-$swipe-offset / $row-w));
+        }
+    }
+
+    &__menu-trigger {
+        position: absolute;
+        z-index: 2;
+        padding: 0;
+        border: 0;
+        background: transparent;
+        cursor: pointer;
+    }
+}

@@ -1,7 +1,10 @@
 "use client";
 import Image from "next/image";
 import DemicareScanFaceScreen from "./demicareScanFaceScreen";
+import DemicareHomeScreen from "./demicareHomeScreen";
 import DemicareAnalyticsScreens from "./demicareAnalyticsScreens";
+import DemicareTrackProgressScreens from "./demicareTrackProgressScreens";
+import DemicareRoutineScreen from "./demicareRoutineScreen";
 
 export default function DemicarehighFidelity() {
     return (
@@ -51,7 +54,7 @@ export default function DemicarehighFidelity() {
                 The Home screen is the starting point for users each day. New users are prompted to create a routine, while existing users see reminders for their daily routines. It also features quick-access cards for Track Progress, View Analytics, and a curated section for Guided Topics.
                 </div>
 
-                <Image src="/assets/demicarehighFidelity3.svg" width={1184} height={704} />
+                <DemicareHomeScreen />
 
             </div>
             <div className="demicare__high-fidelity__inner__card">
@@ -60,7 +63,7 @@ export default function DemicarehighFidelity() {
                 The Routine screen gives users a quick overview of their skincare habits, showing total streaks, daily streaks, and the status of routines, including active, completed, paused, and achieved. It’s designed to keep users on track and motivated in their skincare journey.
                 </div>
 
-                <Image src="/assets/demicarehighFidelity4.svg" width={1184} height={704} />
+                <DemicareRoutineScreen />
 
             </div>
             <div className="demicare__high-fidelity__inner__card">
@@ -78,7 +81,7 @@ export default function DemicarehighFidelity() {
                 The Track Progress screens give users a snapshot of their skincare journey, showing their most recent scan results alongside visual insights on skin improvements. This feature helps users see how their routine is working, track trends over time, and stay motivated to keep going.
                 </div>
 
-                <Image src="/assets/demicarehighFidelity6.svg" width={1184} height={704} />
+                <DemicareTrackProgressScreens />
 
             </div>
             <div className="demicare__high-fidelity__inner__card">
