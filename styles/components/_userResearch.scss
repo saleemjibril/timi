@@ -14,8 +14,14 @@
 
     &__card {
         padding: 32px 24px;
-        // height: 359px;
-        // padding-top: 32px;
+        width: 100%;
+        border: none;
+        text-align: left;
+        cursor: pointer;
+        font: inherit;
+        background: #282828;
+        color: #fff !important;
+
         &__title {
             @extend %title-24;
             font-weight: 500;
@@ -26,13 +32,9 @@
             font-weight: 400;
         }
 
-        &:first-child {
-            background: #FFF;
+        &--active {
+            background: #fff;
             color: #000 !important;
-        }
-        &:last-child {
-            background: #282828;
-            color: #FFF !important;
         }
     }
     }

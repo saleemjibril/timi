@@ -199,6 +199,18 @@
         &::-webkit-scrollbar {
             display: none;
         }
+
+        &--horizontal {
+            overflow-x: auto;
+            overflow-y: hidden;
+            z-index: 2;
+            border-radius: 0;
+            background: #fff;
+            touch-action: pan-x;
+            overscroll-behavior-x: contain;
+            overscroll-behavior-y: none;
+            clip-path: inset(0);
+        }
     }
 
     &__scroll-inner {
@@ -212,6 +224,21 @@
             width: 100%;
             height: auto;
             display: block;
+        }
+
+        .demicare__home__scroll--horizontal {
+            position: absolute;
+        }
+
+        &--horizontal {
+            height: 100%;
+            width: auto;
+
+            & > img {
+                top: 0;
+                width: auto;
+                height: 100%;
+            }
         }
     }
 }

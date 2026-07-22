@@ -70,47 +70,12 @@ export default function Projects() {
           "-=0.6"
         ); // Start 0.6 seconds before card animation ends
 
-        // Eazinvite hover is handled via CSS on .home__projects__card__bg
-        if (index === 2) return;
-
-        // Add hover animations for images
-        const handleMouseEnter = () => {
-          gsap.to(image, {
-            borderRadius: "24px",
-            duration: 0.3,
-            ease: "power2.out",
-          });
-        };
-
-        const handleMouseLeave = () => {
-          gsap.to(image, {
-            borderRadius: "0px",
-            duration: 0.3,
-            ease: "power2.out",
-          });
-        };
-
-        image.addEventListener("mouseenter", handleMouseEnter);
-        image.addEventListener("mouseleave", handleMouseLeave);
-
-        // Store cleanup functions for later use
-        image._hoverCleanup = () => {
-          image.removeEventListener("mouseenter", handleMouseEnter);
-          image.removeEventListener("mouseleave", handleMouseLeave);
-        };
+        // Hover border-radius is handled via CSS on __visual / __bg
       }
     });
 
     // Cleanup function for hover events
-    return () => {
-      [image1Ref.current, image2Ref.current].forEach(
-        (image) => {
-          if (image && image._hoverCleanup) {
-            image._hoverCleanup();
-          }
-        }
-      );
-    };
+    return () => {};
   });
 
   return (
@@ -147,21 +112,24 @@ export default function Projects() {
           </Link>
         </div>
 
-        <Image
-          src={"/assets/clichire.svg"}
-          width={715}
-          height={770}
-          ref={image1Ref}
-        />
+        <div className="home__projects__card__visual" ref={image1Ref}>
+          <Image
+            src={"/assets/clichire.svg"}
+            width={715}
+            height={770}
+            alt="Clichire project"
+          />
+        </div>
       </div>
       <div className="home__projects__card">
-        <Image
-          src={"/assets/demicare.svg"}
-          width={715}
-          height={770}
-          ref={image2Ref}
-        />
-
+        <div className="home__projects__card__visual" ref={image2Ref}>
+          <Image
+            src={"/assets/demicare.svg"}
+            width={715}
+            height={770}
+            alt="DemiCare project"
+          />
+        </div>
         <div className="home__projects__card__card1" ref={card2Ref}>
           <div className="home__projects__card__card1__subsubtitle">
             (Mobile app)
@@ -223,8 +191,9 @@ export default function Projects() {
 
         <Image
           src={"/assets/eazinvite.png"}
-          width={820}
-          height={615}
+          width={715}
+          height={770}
+          alt="Eazinvite project"
         />
         </div>
       </div>

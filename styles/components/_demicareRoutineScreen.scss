@@ -45,7 +45,6 @@
         padding: 0;
         border: 0;
         background-color: #fafafa;
-        background-image: url("/assets/routineScreen1DeleteInteraction.svg");
         background-repeat: no-repeat;
         background-size: percentage($delete-svg-w / $delete-strip-w) auto;
         opacity: 0;
@@ -63,7 +62,6 @@
         position: absolute;
         inset: 0;
         z-index: 1;
-        background-image: url("/assets/routineScreen1.svg");
         background-repeat: no-repeat;
         background-size: percentage($phone-w / $row-w) auto;
         transition: transform 0.28s ease;

@@ -1,3 +1,5 @@
+import { demicareAsset as assetUrl } from "@/lib/assetUrl";
+
 const CANVAS = { w: 1184, h: 704 };
 const PHONE = { w: 280, h: 577 };
 
@@ -77,7 +79,7 @@ export default function DemicareTrackProgressScreens() {
                             width: `${(phone.w / CANVAS.w) * 100}%`,
                         }}
                     >
-                        <img src={phone.src} alt="Track progress screen design" />
+                        <img src={assetUrl(phone.src)} alt="Track progress screen design" />
 
                         {scroll && (
                             <div
@@ -96,7 +98,7 @@ export default function DemicareTrackProgressScreens() {
                                     }}
                                 >
                                     <img
-                                        src={scroll.src}
+                                        src={assetUrl(scroll.src)}
                                         alt="Track progress scrollable content"
                                         style={{
                                             top: `calc(-${scroll.fullScreen.scrollStartY} / ${scrollMetrics.scrollableHeight} * 100%)`,

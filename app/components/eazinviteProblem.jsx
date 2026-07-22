@@ -4,10 +4,17 @@ import { useRef, useEffect } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
+const PROBLEM_SLIDES = [
+    "/assets/eazinviteProblem.svg",
+    "/assets/eazinviteProblem2.svg",
+    "/assets/eazinviteProblem3.svg",
+    "/assets/eazinviteProblem4.svg",
+];
+
 export default function EazInviteProblem(params) {
     const sliderRef = useRef(null);
     const indicatorsRef = useRef([]);
-    const slides = 3; // Number of slides
+    const slides = PROBLEM_SLIDES.length;
     const currentSlide = useRef(0);
 
     useGSAP(() => {
@@ -35,8 +42,7 @@ export default function EazInviteProblem(params) {
             const autoSlide = () => {
                 currentSlide.current = (currentSlide.current + 1) % slides;
                 
-                // Calculate the correct transform value
-                // Each slide is 33.333% of the slider width, so we move by that amount
+                // Move by one slide width as a percentage of the slider track
                 const translateX = -currentSlide.current * (100 / slides);
                 
                 gsap.to(slider, {
@@ -76,32 +82,29 @@ As a result, hosts face low engagement, frustrated guests, and disorganized even
 
         <div className="eazinvite__problem__bg">
             <div className="eazinvite__problem__slider-container">
-                <div className="eazinvite__problem__slider" ref={sliderRef}>
-                    <div className="eazinvite__problem__slide">
-                        <Image src={"/assets/eazinviteProblem.svg"} width={796} height={569} />
-                    </div>
-                    <div className="eazinvite__problem__slide">
-                        <Image src={"/assets/eazinviteProblem.svg"} width={796} height={569} />
-                    </div>
-                    <div className="eazinvite__problem__slide">
-                        <Image src={"/assets/eazinviteProblem.svg"} width={796} height={569} />
-                    </div>
+                <div
+                    className="eazinvite__problem__slider"
+                    ref={sliderRef}
+                    style={{ "--slide-count": slides }}
+                >
+                    {PROBLEM_SLIDES.map((src) => (
+                        <div key={src} className="eazinvite__problem__slide">
+                            <Image src={src} width={796} height={569} alt="" />
+                        </div>
+                    ))}
                 </div>
             </div>
             
             <div className="eazinvite__problem__indicators">
-                <div 
-                    className="eazinvite__problem__indicator" 
-                    ref={el => indicatorsRef.current[0] = el}
-                ></div>
-                <div 
-                    className="eazinvite__problem__indicator" 
-                    ref={el => indicatorsRef.current[1] = el}
-                ></div>
-                <div 
-                    className="eazinvite__problem__indicator" 
-                    ref={el => indicatorsRef.current[2] = el}
-                ></div>
+                {PROBLEM_SLIDES.map((src, index) => (
+                    <div
+                        key={src}
+                        className="eazinvite__problem__indicator"
+                        ref={(el) => {
+                            indicatorsRef.current[index] = el;
+                        }}
+                    />
+                ))}
             </div>
         </div>
 

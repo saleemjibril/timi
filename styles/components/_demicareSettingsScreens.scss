@@ -1,0 +1,51 @@
+.demicare__settings {
+    position: relative;
+    width: 100%;
+    background: #e8ab9b;
+    overflow: hidden;
+
+    &__phone {
+        position: absolute;
+        height: auto;
+
+        & > img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    }
+
+    &__toggle {
+        position: absolute;
+        z-index: 1;
+        padding: 0;
+        border: 0;
+        border-radius: 999px;
+        background: #efefef;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 100%;
+            border-radius: 50%;
+            background: #8a938f;
+            transition:
+                transform 0.2s ease,
+                background-color 0.2s ease;
+        }
+
+        &--on {
+            background: #3eb04b;
+
+            &::after {
+                background: #fff;
+                transform: translateX(100%);
+            }
+        }
+    }
+}

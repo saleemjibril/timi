@@ -152,7 +152,13 @@ export default function EazinviteDesignStartergy() {
             </div>
           </div>
 
-          <Image src="/assets/eazinviteDesign1.svg" width={656} height={523} />
+          <Image
+            src="/assets/eazinviteDesign1.svg"
+            width={656}
+            height={523}
+            alt="PRD Alignment"
+            style={{ width: 656, height: "auto", maxWidth: "100%" }}
+          />
         </div>
 
         <div 
@@ -173,7 +179,13 @@ export default function EazinviteDesignStartergy() {
             </div>
           </div>
 
-          <Image src="/assets/eazinviteDesign2.svg" width={656} height={523} />
+          <Image
+            src="/assets/eazinviteDesign2.svg"
+            width={656}
+            height={523}
+            alt="User Role Mapping"
+            style={{ width: 656, height: "auto", maxWidth: "100%" }}
+          />
         </div>
         
         <div 
@@ -203,22 +215,28 @@ export default function EazinviteDesignStartergy() {
                 <div className="eazinvite__problem__tasks__card__bg__slide">
                   <Image
                     src="/assets/eazinviteDesign3.svg"
-                    width={520}
-                    height={485.7894592285156}
+                    width={536}
+                    height={486}
+                    alt="User Flow Design"
+                    style={{ width: 520, height: "auto", maxWidth: "100%" }}
                   />
                 </div>
                 <div className="eazinvite__problem__tasks__card__bg__slide">
                   <Image
                     src="/assets/eazinviteDesign3.svg"
-                    width={520}
-                    height={485.7894592285156}
+                    width={536}
+                    height={486}
+                    alt="User Flow Design"
+                    style={{ width: 520, height: "auto", maxWidth: "100%" }}
                   />
                 </div>
                 <div className="eazinvite__problem__tasks__card__bg__slide">
                   <Image
                     src="/assets/eazinviteDesign3.svg"
-                    width={520}
-                    height={485.7894592285156}
+                    width={536}
+                    height={486}
+                    alt="User Flow Design"
+                    style={{ width: 520, height: "auto", maxWidth: "100%" }}
                   />
                 </div>
               </div>
@@ -269,21 +287,27 @@ export default function EazinviteDesignStartergy() {
                   <Image
                     src="/assets/eazinviteDesign4.svg"
                     width={520}
-                    height={369.77777099609375}
+                    height={370}
+                    alt="Wireframes & Structure"
+                    style={{ width: 520, height: "auto", maxWidth: "100%" }}
                   />
                 </div>
                 <div className="eazinvite__problem__tasks__card__bg2__slide">
                   <Image
                     src="/assets/eazinviteDesign4.svg"
                     width={520}
-                    height={369.77777099609375}
+                    height={370}
+                    alt="Wireframes & Structure"
+                    style={{ width: 520, height: "auto", maxWidth: "100%" }}
                   />
                 </div>
                 <div className="eazinvite__problem__tasks__card__bg2__slide">
                   <Image
                     src="/assets/eazinviteDesign4.svg"
                     width={520}
-                    height={369.77777099609375}
+                    height={370}
+                    alt="Wireframes & Structure"
+                    style={{ width: 520, height: "auto", maxWidth: "100%" }}
                   />
                 </div>
               </div>

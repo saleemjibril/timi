@@ -30,9 +30,69 @@
         }
     }
 
-    & > img {
+    &__visual {
+        position: relative;
         width: 100%;
-        height: auto;
+        max-width: 632px;
+        aspect-ratio: 632 / 595;
+        background: #f9d3da;
+        flex-shrink: 0;
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: calc(136 / 595 * 100%);
+            background: #e8ab9b;
+            z-index: 0;
+        }
+    }
+
+    &__phone {
+        position: absolute;
+        // introSingle.svg is 311×549 with the device inset; size the full asset
+        // so the 208.58px-wide phone body matches demicare-intro placement.
+        left: calc((211.66 - 51.1392) / 632 * 100%);
+        top: calc((77.3868 - 30.6382) / 595 * 100%);
+        width: calc(311 / 632 * 100%);
+        z-index: 1;
+
+        & > img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    }
+
+    &__scroll {
+        position: absolute;
+        overflow-x: hidden;
+        overflow-y: auto;
+        border-radius: 0 0 4% 4%;
+        z-index: 1;
+        background: #fff;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    &__scroll-inner {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+
+        & > img {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: auto;
+            display: block;
+        }
     }
 
     @media (max-width: $phone) {

@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "assets:upload": "node --env-file=.env scripts/uploadAssets.mjs"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
@@ -28,5 +29,9 @@
     "redux": "^5.0.1",
     "rss-parser": "^3.13.0",
     "sass": "^1.83.4"
+  },
+  "devDependencies": {
+    "cloudinary": "^2.10.0",
+    "sharp": "^0.35.3"
   }
 }

@@ -5,6 +5,7 @@ import DemicareHomeScreen from "./demicareHomeScreen";
 import DemicareAnalyticsScreens from "./demicareAnalyticsScreens";
 import DemicareTrackProgressScreens from "./demicareTrackProgressScreens";
 import DemicareRoutineScreen from "./demicareRoutineScreen";
+import DemicareSettingsScreens from "./demicareSettingsScreens";
 
 export default function DemicarehighFidelity() {
     return (
@@ -90,7 +91,7 @@ export default function DemicarehighFidelity() {
                 The screens displayed here, users can view and update their personal details, manage their account information, and adjust their app preferences. The profile screen provides a snapshot of the user’s data and routine insights, while the settings screen allows them to customize app functionalities, manage notifications, and access support features. 
                 </div>
 
-                <Image src="/assets/demicarehighFidelity7.svg" width={1184} height={704} />
+                <DemicareSettingsScreens />
 
             </div>
             </div>

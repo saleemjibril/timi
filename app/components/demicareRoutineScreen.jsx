@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { demicareAsset as assetUrl } from "@/lib/assetUrl";
 
 const CANVAS = { w: 1184, h: 704 };
 const PHONE = { w: 280, h: 577 };
@@ -69,6 +70,7 @@ function RoutineSwipeRow({ row, swiped, onToggle }) {
                 aria-hidden={!swiped}
                 tabIndex={swiped ? 0 : -1}
                 style={{
+                    backgroundImage: `url(${assetUrl("/assets/routineScreen1DeleteInteraction.svg")})`,
                     backgroundPosition: `${DELETE.bgPosX * 100}% ${
                         DELETE.iconBgPosY * 100
                     }%`,
@@ -80,6 +82,7 @@ function RoutineSwipeRow({ row, swiped, onToggle }) {
                     swiped ? " demicare__routine__swipe-card--swiped" : ""
                 }`}
                 style={{
+                    backgroundImage: `url(${assetUrl("/assets/routineScreen1.svg")})`,
                     backgroundPosition: `${BG_POS_X * 100}% ${bgPosY * 100}%`,
                 }}
             >
@@ -127,7 +130,7 @@ export default function DemicareRoutineScreen() {
                         width: `${(phone.w / CANVAS.w) * 100}%`,
                     }}
                 >
-                    <img src={phone.src} alt="Routine screen design" />
+                    <img src={assetUrl(phone.src)} alt="Routine screen design" />
 
                     {phone.id === "left" &&
                         ROUTINE_ROWS.map((row) => (

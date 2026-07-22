@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { demicareAsset as assetUrl } from "@/lib/assetUrl";
 
 const CANVAS = { w: 1184, h: 704 };
 
@@ -141,7 +142,7 @@ export default function DemicareScanFaceScreen() {
                         width: `${(phone.w / CANVAS.w) * 100}%`,
                     }}
                 >
-                    <img src={phone.src} alt="Scan face screen design" />
+                    <img src={assetUrl(phone.src)} alt="Scan face screen design" />
 
                     {phone.id === "middle" && (
                         <div
@@ -156,7 +157,7 @@ export default function DemicareScanFaceScreen() {
                             }}
                         >
                             <div className="demicare__scan-face__glare" ref={glareRef}>
-                                <img src="/assets/scan-face-glare.svg" alt="" />
+                                <img src={assetUrl("/assets/scan-face-glare.svg")} alt="" />
                             </div>
                         </div>
                     )}
@@ -178,7 +179,7 @@ export default function DemicareScanFaceScreen() {
                                 }}
                             >
                                 <img
-                                    src="/assets/scanFaceScreenFullScreen.svg"
+                                    src={assetUrl("/assets/scanFaceScreenFullScreen.svg")}
                                     alt="Scan face form scrollable content"
                                     style={{
                                         top: `calc(-${FULL_SCREEN.scrollStartY} / ${SCROLLABLE_HEIGHT} * 100%)`,

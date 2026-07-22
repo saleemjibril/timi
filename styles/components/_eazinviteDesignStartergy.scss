@@ -125,9 +125,12 @@
                     justify-content: center;
 
                     & > img {
-                        width: 100%;
-                        max-width: 520px;
+                        flex-shrink: 0;
+                        width: 520px;
+                        max-width: 100%;
                         height: auto;
+                        aspect-ratio: 536 / 486;
+                        object-fit: contain;
                     }
                 }
 
@@ -181,9 +184,12 @@
                     justify-content: center;
 
                     & > img {
-                        width: 100%;
-                        max-width: 520px;
+                        flex-shrink: 0;
+                        width: 520px;
+                        max-width: 100%;
                         height: auto;
+                        aspect-ratio: 520 / 370;
+                        object-fit: contain;
                     }
                 }
 
@@ -221,9 +227,13 @@
                 width: 100%;
             }
 
-            &>img {
-                width: 100%;
+            & > img {
+                flex-shrink: 0;
+                width: 656px;
                 height: auto;
+                max-width: 100%;
+                aspect-ratio: 656 / 523;
+                object-fit: contain;
             }
         }
     }
@@ -307,11 +317,19 @@
                     font-size: 16px;
                 }
 
+                & > img {
+                    width: 100%;
+                }
+
                 &__bg,
                 &__bg2 {
                     min-width: 0;
                     width: 100%;
                     padding: 24px 16px;
+
+                    &__slide > img {
+                        width: 100%;
+                    }
                 }
             }
         }

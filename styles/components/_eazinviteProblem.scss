@@ -45,12 +45,12 @@
 
        &__slider {
         display: flex;
-        width: 300%; // 3 slides * 100%
+        width: calc(var(--slide-count, 1) * 100%);
         transition: transform 0.8s ease-in-out;
        }
 
        &__slide {
-        width: 33.333%; // 100% / 3 slides
+        width: calc(100% / var(--slide-count, 1));
         flex-shrink: 0;
         display: flex;
         align-items: center;

@@ -1,3 +1,5 @@
+import { demicareAsset as assetUrl } from "@/lib/assetUrl";
+
 const CANVAS = { w: 1184, h: 704 };
 const PHONE = { w: 280, h: 577 };
 
@@ -20,6 +22,16 @@ const PHONES = [
                 tabBarY: 1174,
             },
         },
+        horizontalScroll: {
+            src: "/assets/homeScreen1HorizontalScroll.svg",
+            slot: { x: 16, y: 544, w: 359, h: 240 },
+            fullScreen: {
+                w: 656,
+                h: 241,
+                scrollStartX: 0,
+                contentEndX: 656,
+            },
+        },
     },
     {
         id: "middle",
@@ -36,14 +48,24 @@ const PHONES = [
         w: 280,
         scroll: {
             src: "/assets/homeScreen3FullScreen.svg",
-            region: { x: 13.2051, y: 90.6218, w: 254.59 },
+            region: { x: 13.2051, y: 121.696, w: 254.59 },
             tabBarY: 496.25,
             contentEndY: 485.388,
             fullScreen: {
                 w: 375,
                 h: 1237,
-                scrollStartY: 84.15,
+                scrollStartY: 159,
                 tabBarY: 1136,
+            },
+        },
+        horizontalScroll: {
+            src: "/assets/homeScreen1HorizontalScroll.svg",
+            slot: { x: 16, y: 470, w: 359, h: 240 },
+            fullScreen: {
+                w: 656,
+                h: 241,
+                scrollStartX: 0,
+                contentEndX: 656,
             },
         },
     },
@@ -69,6 +91,12 @@ const getScrollMetrics = (scroll) => {
     };
 };
 
+const getHorizontalScrollMetrics = (horizontalScroll) => ({
+    scrollableWidth:
+        horizontalScroll.fullScreen.contentEndX -
+        horizontalScroll.fullScreen.scrollStartX,
+});
+
 export default function DemicareHomeScreen() {
     return (
         <div
@@ -77,7 +105,11 @@ export default function DemicareHomeScreen() {
         >
             {PHONES.map((phone) => {
                 const scroll = phone.scroll;
+                const horizontalScroll = phone.horizontalScroll;
                 const scrollMetrics = scroll ? getScrollMetrics(scroll) : null;
+                const horizontalScrollMetrics = horizontalScroll
+                    ? getHorizontalScrollMetrics(horizontalScroll)
+                    : null;
 
                 return (
                     <div
@@ -89,7 +121,7 @@ export default function DemicareHomeScreen() {
                             width: `${(phone.w / CANVAS.w) * 100}%`,
                         }}
                     >
-                        <img src={phone.src} alt="Home screen design" />
+                        <img src={assetUrl(phone.src)} alt="Home screen design" />
 
                         {scroll && (
                             <div
@@ -108,12 +140,42 @@ export default function DemicareHomeScreen() {
                                     }}
                                 >
                                     <img
-                                        src={scroll.src}
+                                        src={assetUrl(scroll.src)}
                                         alt="Home screen scrollable content"
                                         style={{
                                             top: `calc(-${scroll.fullScreen.scrollStartY} / ${scrollMetrics.scrollableHeight} * 100%)`,
                                         }}
                                     />
+
+                                    {horizontalScroll && (
+                                        <div
+                                            className="demicare__home__scroll demicare__home__scroll--horizontal"
+                                            style={{
+                                                left: `${(horizontalScroll.slot.x / scroll.fullScreen.w) * 100}%`,
+                                                top: `calc(${(horizontalScroll.slot.y - scroll.fullScreen.scrollStartY) / scrollMetrics.scrollableHeight} * 100%)`,
+                                                width: `${(horizontalScroll.slot.w / scroll.fullScreen.w) * 100}%`,
+                                                height: `calc(${horizontalScroll.slot.h} / ${scrollMetrics.scrollableHeight} * 100%)`,
+                                            }}
+                                            onWheel={(event) =>
+                                                event.stopPropagation()
+                                            }
+                                        >
+                                            <div
+                                                className="demicare__home__scroll-inner demicare__home__scroll-inner--horizontal"
+                                                style={{
+                                                    aspectRatio: `${horizontalScrollMetrics.scrollableWidth} / ${horizontalScroll.fullScreen.h}`,
+                                                }}
+                                            >
+                                                <img
+                                                    src={assetUrl(horizontalScroll.src)}
+                                                    alt="Guided topics scrollable content"
+                                                    style={{
+                                                        left: `calc(-${horizontalScroll.fullScreen.scrollStartX} / ${horizontalScrollMetrics.scrollableWidth} * 100%)`,
+                                                    }}
+                                                />
+                                            </div>
+                                        </div>
+                                    )}
                                 </div>
                             </div>
                         )}
