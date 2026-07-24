@@ -11,9 +11,13 @@ const NAV_LINKS = [
   { href: "/#socials", id: "socials", label: "Socials" },
 ];
 
+const RESUME_HREF =
+  "https://docs.google.com/document/d/1TaltWbSKNNtVtG7-znS3x-63BfbBoI7_flRs30nA1Rw/edit?usp=sharing";
+
 export default function Header() {
   const pathname = usePathname();
   const [activeId, setActiveId] = useState(null);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     if (pathname !== "/") {
@@ -63,7 +67,33 @@ export default function Header() {
     };
   }, [pathname]);
 
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    if (!menuOpen) return;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    const onKeyDown = (event) => {
+      if (event.key === "Escape") setMenuOpen(false);
+    };
+
+    window.addEventListener("keydown", onKeyDown);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", onKeyDown);
+    };
+  }, [menuOpen]);
+
+  const closeMenu = () => setMenuOpen(false);
+
   const handleSectionClick = (event, id) => {
+    closeMenu();
+
     if (pathname !== "/") return;
 
     event.preventDefault();
@@ -72,10 +102,15 @@ export default function Header() {
     scrollToSection(id);
   };
 
+  const linkClassName = (id) =>
+    activeId === id
+      ? "header__inner__links__item header__inner__links__item--active"
+      : "header__inner__links__item";
+
   return (
     <header className="header">
       <div className="header__inner">
-        <Link href="/" className="header__inner__logo">
+        <Link href="/" className="header__inner__logo" onClick={closeMenu}>
           <Image
             src="/assets/icons/logo.svg"
             width={33}
@@ -91,17 +126,13 @@ export default function Header() {
                 key={link.id}
                 href={link.href}
                 onClick={(event) => handleSectionClick(event, link.id)}
-                className={
-                  activeId === link.id
-                    ? "header__inner__links__item header__inner__links__item--active"
-                    : "header__inner__links__item"
-                }
+                className={linkClassName(link.id)}
               >
                 {link.label}
               </Link>
             ))}
             <a
-              href="https://docs.google.com/document/d/1TaltWbSKNNtVtG7-znS3x-63BfbBoI7_flRs30nA1Rw/edit?usp=sharing"
+              href={RESUME_HREF}
               target="_blank"
               rel="noopener noreferrer"
               className="header__inner__links__item"
@@ -109,17 +140,103 @@ export default function Header() {
               Resume
             </a>
           </div>
-          <Image src="/assets/icons/lightMode.svg" width={24} height={24} alt="" />
+          <Image
+            className="header__theme"
+            src="/assets/icons/lightMode.svg"
+            width={24}
+            height={24}
+            alt=""
+          />
           <Link
             href="/contact"
             className={
-              pathname === "/contact" ? "header__contact header__contact--active" : "header__contact"
+              pathname === "/contact"
+                ? "header__contact header__contact--active"
+                : "header__contact"
             }
           >
             Contact me
           </Link>
+          <button
+            type="button"
+            className="header__menu-toggle"
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={menuOpen}
+            aria-controls="header-mobile-menu"
+            onClick={() => setMenuOpen((open) => !open)}
+          >
+            <Image
+              src="/assets/icons/hamburger.svg"
+              width={24}
+              height={24}
+              alt=""
+            />
+          </button>
         </nav>
       </div>
+
+      <div
+        className={
+          menuOpen
+            ? "header__overlay header__overlay--open"
+            : "header__overlay"
+        }
+        onClick={closeMenu}
+        aria-hidden={!menuOpen}
+      />
+
+      <aside
+        id="header-mobile-menu"
+        className={
+          menuOpen ? "header__sidebar header__sidebar--open" : "header__sidebar"
+        }
+        aria-hidden={!menuOpen}
+      >
+        <div className="header__sidebar__top">
+          <button
+            type="button"
+            className="header__sidebar__close"
+            aria-label="Close menu"
+            onClick={closeMenu}
+          >
+            <Image
+              src="/assets/icons/cancel.svg"
+              width={36}
+              height={36}
+              alt=""
+            />
+          </button>
+        </div>
+
+        <nav className="header__sidebar__nav">
+          {NAV_LINKS.map((link) => (
+            <Link
+              key={link.id}
+              href={link.href}
+              onClick={(event) => handleSectionClick(event, link.id)}
+              className={linkClassName(link.id)}
+            >
+              {link.label}
+            </Link>
+          ))}
+          <a
+            href={RESUME_HREF}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="header__inner__links__item"
+            onClick={closeMenu}
+          >
+            Resume
+          </a>
+          <Link
+            href="/contact"
+            className="header__sidebar__contact"
+            onClick={closeMenu}
+          >
+            Contact me
+          </Link>
+        </nav>
+      </aside>
     </header>
   );
 }
