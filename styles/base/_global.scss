@@ -3,6 +3,8 @@ html {
   font-size: calc(100vw / 1440 * 10);
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+  // JS handles section scrolling — css smooth can overshoot long distances
+  scroll-behavior: auto;
 
   @media (min-width: 1440px) {
     font-size: 62.5%;
@@ -11,12 +13,15 @@ html {
   @media (max-width: $phone) {
     font-size: calc(100vw / 550 * 10);
   }
+
+  // Breathing room for hash targets (header is in document flow, not fixed)
+  [id="projects"],
+  [id="experience"],
+  [id="socials"] {
+    scroll-margin-top: 24px;
+  }
 }
 :root {
-  scroll-behavior: smooth;
-    scroll-padding-top: 160px; 
-
-
   --font-primary: var(--font-inter), sans-serif;
 }
 body {

@@ -102,7 +102,7 @@ export default function Me() {
         <Image src="/assets/me2.svg" width={644} height={400} />
       </div>
 
-      <div className="home__me__title">
+      <div className="home__me__title" id="experience">
         Where I’ve shaped ideas into Experiences.
       </div>
 

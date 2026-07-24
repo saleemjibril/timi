@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
@@ -207,14 +208,15 @@ export default function HomeHero(params) {
             that drives business growth and meets user needs.
           </div>
 
-          <button>
+          <Link href="/contact">
             Work with me
             <Image
               src={"/assets/icons/rightArrow.svg"}
               width={18}
               height={18}
+              alt=""
             />
-          </button>
+          </Link>
         </div>
       </div>
       <div className="home__hero__image-grid">

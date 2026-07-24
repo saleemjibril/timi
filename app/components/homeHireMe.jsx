@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function HomeHireMe({ title, image, subtitle }) {
     return (
@@ -16,16 +17,16 @@ export default function HomeHireMe({ title, image, subtitle }) {
                 </div>
 
                 <div className="home__hire-me__inner__button-group">
-                    <button>
+                    <Link href="/contact">
                         Hire me
 
-                        <Image src={"/assets/icons/rightArrow.svg"} width={18} height={18} />
-                    </button>
-                    <button>
+                        <Image src={"/assets/icons/rightArrow.svg"} width={18} height={18} alt="" />
+                    </Link>
+                    <a href="mailto:ololadegrace.ot@gmail.com">
                         Email
 
-                        <Image src={"/assets/icons/email.svg"} width={34} height={34} />
-                    </button>
+                        <Image src={"/assets/icons/email.svg"} width={34} height={34} alt="" />
+                    </a>
                 </div>
             </div>
         </div>

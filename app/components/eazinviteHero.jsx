@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function EazInviteHero(params) {
     return (
@@ -13,7 +14,7 @@ export default function EazInviteHero(params) {
                         Eazinvite simplifies how events are planned, managed, and experienced. From creating beautiful digital invitations to managing guest lists, tracking RSVPs, sending reminders, and monitoring event performance in real-time, the platform empowers hosts and admins with the tools they need to run organized, engaging, and stress-free events.
                     </div>
 
-                    <button className="eazinvite__hero__inner__button">Work with me <Image src={"/assets/icons/rightArrow.svg"} width={18} height={18} /></button>
+                    <Link href="/contact" className="eazinvite__hero__inner__button">Work with me <Image src={"/assets/icons/rightArrow.svg"} width={18} height={18} alt="" /></Link>
 
                 </div>
 

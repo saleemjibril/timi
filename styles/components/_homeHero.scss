@@ -85,7 +85,8 @@
             }
             }
 
-            & > button {
+            & > button,
+            & > a {
                 @extend %primary-button;
                 font-family: var(--font-playfair-display);
                 margin-bottom: 74px;
@@ -162,7 +163,8 @@
                     font-size: 16px;
                 }
 
-                & > button {
+                & > button,
+                & > a {
                     margin-bottom: 0;
                 }
             }

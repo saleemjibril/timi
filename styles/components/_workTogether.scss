@@ -67,6 +67,7 @@
             & >:last-child {
                 @extend %transparent-button;
                 font-family: var(--font-playfair-display);
+                text-decoration: none;
 
                 & > svg {
                     min-width: 100px;

@@ -4,32 +4,58 @@ import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
+const SOCIALS = [
+  {
+    src: "/assets/instagram.svg",
+    href: "https://www.instagram.com/sisi_lolade",
+    label: "Instagram",
+  },
+  {
+    src: "/assets/tiktok.svg",
+    href: "https://www.tiktok.com/@ololadeuxdesigner",
+    label: "TikTok",
+  },
+  {
+    src: "/assets/behance.svg",
+    href: null,
+    label: "Behance",
+  },
+  {
+    src: "/assets/x.svg",
+    href: "https://x.com/ololadedesign",
+    label: "Twitter",
+  },
+  {
+    src: "/assets/linkedin.svg",
+    href: "https://www.linkedin.com/in/oluwatimilehin-adekoye",
+    label: "LinkedIn",
+  },
+];
+
 export default function Hideout() {
   const groupRef = useRef(null);
-  const imageRefs = useRef([]);
+  const itemRefs = useRef([]);
+
   useGSAP(
     () => {
-      const images = imageRefs.current.filter(Boolean);
+      const items = itemRefs.current.filter(Boolean);
       const group = groupRef.current;
-  
-      if (!group || images.length === 0) return;
-  
-      // Set initial state
-      gsap.set(images, {
+
+      if (!group || items.length === 0) return;
+
+      gsap.set(items, {
         x: 0,
         scale: 1,
         transformOrigin: "center center",
       });
-  
-      // Create the spread out animation timeline
+
       const spreadTimeline = gsap.timeline({ paused: true });
-  
-      // Animate each image to spread out to the right with elastic bounce
-      images.forEach((image, index) => {
+
+      items.forEach((item, index) => {
         const spreadDistance = index * 51;
-  
+
         spreadTimeline.to(
-          image,
+          item,
           {
             x: spreadDistance,
             scale: 1.05,
@@ -40,32 +66,27 @@ export default function Hideout() {
           0
         );
       });
-  
-      // Mouse enter event - spread out with elastic bounce
+
       const handleMouseEnter = () => {
         spreadTimeline.restart();
       };
-  
-      // Mouse leave event - return to original position
+
       const handleMouseLeave = () => {
         spreadTimeline.kill();
-  
-        gsap.to(images, {
+
+        gsap.to(items, {
           x: 0,
           scale: 1,
           rotate: "0deg",
           duration: 3,
-          ease: "power2.inOut",
           ease: "elastic.out(1.5, 0.5)",
           stagger: 0.05,
         });
       };
-  
-      // Add event listeners
+
       group.addEventListener("mouseenter", handleMouseEnter);
       group.addEventListener("mouseleave", handleMouseLeave);
-  
-      // Cleanup
+
       return () => {
         group.removeEventListener("mouseenter", handleMouseEnter);
         group.removeEventListener("mouseleave", handleMouseLeave);
@@ -74,41 +95,46 @@ export default function Hideout() {
     },
     { dependencies: [] }
   );
+
   return (
-    <div className="home__hideout">
+    <section className="home__hideout" id="socials" aria-label="Socials">
       <div className="home__hideout__group" ref={groupRef}>
-        <Image
-          src="/assets/instagram.svg"
-          width={905}
-          height={268}
-          ref={(el) => (imageRefs.current[0] = el)}
-        />
-        <Image
-          src="/assets/tiktok.svg"
-          width={905}
-          height={268}
-          ref={(el) => (imageRefs.current[1] = el)}
-        />
-        <Image
-          src="/assets/behance.svg"
-          width={905}
-          height={268}
-          ref={(el) => (imageRefs.current[2] = el)}
-        />
-        <Image
-          src="/assets/x.svg"
-          width={905}
-          height={268}
-          ref={(el) => (imageRefs.current[3] = el)}
-        />
-        <Image
-          src="/assets/linkedin.svg"
-          width={905}
-          height={268}
-          ref={(el) => (imageRefs.current[4] = el)}
-        />
+        {SOCIALS.map((social, index) => {
+          const image = (
+            <Image
+              src={social.src}
+              width={905}
+              height={268}
+              alt={social.label}
+            />
+          );
+
+          if (social.href) {
+            return (
+              <a
+                key={social.label}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={social.label}
+                ref={(el) => (itemRefs.current[index] = el)}
+              >
+                {image}
+              </a>
+            );
+          }
+
+          return (
+            <div
+              key={social.label}
+              ref={(el) => (itemRefs.current[index] = el)}
+            >
+              {image}
+            </div>
+          );
+        })}
       </div>
-      <Image src="/assets/hideout2.png" width={407} height={170} />
-    </div>
+      <Image src="/assets/hideout2.png" width={407} height={170} alt="" />
+    </section>
   );
 }

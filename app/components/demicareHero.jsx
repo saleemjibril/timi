@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { assetUrl } from "@/lib/assetUrl";
 
 export default function DemicareHero() {
@@ -12,13 +13,14 @@ export default function DemicareHero() {
             }}
         >
             <div className="demicare__hero__inner">
-                <Image
-                    className="demicare__hero__back"
-                    src="/assets/icons/backWhite.svg"
-                    width={75}
-                    height={27}
-                    alt=""
-                />
+                <Link href="/" className="demicare__hero__back" aria-label="Back">
+                    <Image
+                        src="/assets/icons/backWhite.svg"
+                        width={75}
+                        height={27}
+                        alt=""
+                    />
+                </Link>
 
                 <div className="demicare__hero__inner__title">
                     Empowering users to track and improve skin health through
@@ -30,7 +32,7 @@ export default function DemicareHero() {
                     insights on how their skin responds over time.
                 </div>
 
-                <button>
+                <Link href="/contact">
                     Work with me{" "}
                     <Image
                         src={"/assets/icons/rightArrow.svg"}
@@ -38,7 +40,7 @@ export default function DemicareHero() {
                         height={18}
                         alt=""
                     />
-                </button>
+                </Link>
             </div>
         </div>
     );

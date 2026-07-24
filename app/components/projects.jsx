@@ -79,7 +79,7 @@ export default function Projects() {
   });
 
   return (
-    <div className="home__projects">
+    <div className="home__projects" id="projects">
       <div className="home__projects__title">Projects and More</div>
 
       <div className="home__projects__card">

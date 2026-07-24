@@ -3,6 +3,7 @@ import { Inter, Syne, Geist, Playfair_Display } from "next/font/google";
 import localFont from "next/font/local";
 import Header from "./components/header";
 import Footer from "./components/footer";
+import HashScroll from "./components/hashScroll";
 
 export const metadata = {
   title: {
@@ -63,6 +64,7 @@ export default function RootLayout({ children }) {
        ${syne.variable} ${inter.variable} ${geist.variable} ${playfairDisplay.variable}`}
     >
       <body>
+        <HashScroll />
         <Header />
         {children}
         <Footer />

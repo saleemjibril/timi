@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Hero() {
     return (
@@ -10,7 +11,7 @@ export default function Hero() {
                 <div className="hero__inner__subtitle">
                     Designed to simplify recruitment by enabling businesses to streamline hiring, evaluate candidates efficiently, and manage talent through a flexible, end-to-end platform
                 </div>
-                <button>Work with me <Image src={"/assets/icons/rightArrow.svg"} width={18} height={18} /></button>
+                <Link href="/contact">Work with me <Image src={"/assets/icons/rightArrow.svg"} width={18} height={18} alt="" /></Link>
 
                 <Image className="hero__inner__image" src={"/assets/hero.png"} width={1206} height={727} />
 

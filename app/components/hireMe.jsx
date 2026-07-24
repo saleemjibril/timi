@@ -1,5 +1,6 @@
 "use client"
 import Image from "next/image";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 export default function HireMe() {
@@ -18,11 +19,11 @@ export default function HireMe() {
             </div>
 
             <div className="hire-me__inner__button-group">
-                <button>
+                <Link href="/contact">
                 Hire me
 
-<Image src={"/assets/icons/rightArrow.svg"} width={18} height={18} />
-                </button>
+<Image src={"/assets/icons/rightArrow.svg"} width={18} height={18} alt="" />
+                </Link>
 
                 <button
                 onClick={() => router.push("/eazinvite")}

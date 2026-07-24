@@ -22,8 +22,17 @@
         width: 819px;
 
        
-        & > img {
+        & > a,
+        & > div {
             margin-left: -160px;
+            display: block;
+            line-height: 0;
+        }
+
+        & > a img,
+        & > div img {
+            width: 100%;
+            height: auto;
         }
 
         & >:first-child {
@@ -45,7 +54,8 @@
             align-items: stretch;
             gap: 12px;
 
-            & > img {
+            & > a,
+            & > div {
                 width: 100%;
                 height: auto;
                 margin-left: 0;

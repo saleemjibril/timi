@@ -16,6 +16,18 @@
     display: flex;
     align-items: center;
 
+    & > a,
+    & > .header__contact {
+      @extend %primary-button;
+      margin-left: 12px;
+      height: 40px;
+      font-family: var(--font-playfair-display);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
     & > button {
       @extend %primary-button;
       margin-left: 12px;
@@ -31,6 +43,21 @@
     gap: 18px;
     margin-right: 20px;
 
+    &__item {
+      color: #737373;
+      text-decoration: none;
+      transition: color 0.25s ease;
+
+      &--active {
+        color: #fff;
+      }
+    }
+
+    a:hover {
+      color: #fff;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
   }
 
  
