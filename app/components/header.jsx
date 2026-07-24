@@ -10,7 +10,9 @@ export default function Header() {
 
     <header className="header">
       <div className="header__inner">
-        <div className="header__inner__logo"><Image src="/assets/icons/logo.svg" width={33} height={51} /></div>
+        <Link href="/" className="header__inner__logo">
+          <Image src="/assets/icons/logo.svg" width={33} height={51} alt="Home" />
+        </Link>
 
         <nav>
 
