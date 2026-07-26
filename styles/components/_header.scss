@@ -79,10 +79,6 @@
     background: transparent;
     cursor: pointer;
     line-height: 0;
-
-    img {
-      filter: invert(var(--color-icon-invert));
-    }
   }
 
   &__menu-toggle {

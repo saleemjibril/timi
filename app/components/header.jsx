@@ -151,7 +151,11 @@ export default function Header() {
             onClick={toggleTheme}
           >
             <Image
-              src="/assets/icons/lightMode.svg"
+              src={
+                theme === "light"
+                  ? "/assets/icons/darkMode.svg"
+                  : "/assets/icons/lightMode.svg"
+              }
               width={24}
               height={24}
               alt=""
