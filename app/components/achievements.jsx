@@ -3,7 +3,10 @@ import Image from "next/image";
 
 export default function Achievements({ subtitle, numbers, bg }) {
     return (
-        <div className="achievements" style={{background: bg}}>
+        <div
+            className="achievements"
+            style={bg ? { background: bg } : undefined}
+        >
             <div className="achievements__inner">
                 <div className="achievements__inner__title-group">
                     <div>Achievements</div>

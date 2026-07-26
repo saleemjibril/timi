@@ -1,10 +1,14 @@
 .demicare__hero {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
     width: 100%;
     height: 49.03vw;
     padding-top: 88px;
+    background-image: var(--demicare-hero-image);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
 
     &__back {
         display: inline-block;
@@ -13,6 +17,8 @@
     }
 
   &__inner {
+    position: relative;
+    z-index: 2;
     width: 100%;
     max-width: 1352px;
     padding: 0 20px;
@@ -23,14 +29,16 @@
         font-weight: 600;
         margin-bottom: 12px;
         width: 100%;
-        max-width: 22.5ch
+        max-width: 22.5ch;
+        color: #fff;
     }
     &__subtitle {
         @extend %title-22;
         font-weight: 500;
         margin-bottom: 16px;
         width: 100%;
-        max-width: 52ch
+        max-width: 52ch;
+        color: #fff;
     }
 
     & > a:not(.demicare__hero__back) {

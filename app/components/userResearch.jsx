@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import ClicHireSlide from "./clichireSlide";
+import { useTheme } from "./themeProvider";
 
 const USER_RESEARCH_SLIDES = [
     {
@@ -24,12 +25,7 @@ const USER_RESEARCH_SLIDES = [
     },
 ];
 
-const CASE_SCENARIO_SLIDES = [
-    { image: "/assets/clichireCaseScenarios.svg" },
-    { image: "/assets/clichireCaseScenarios2.svg" },
-];
-
-const CARDS = [
+const CARDS_META = [
     {
         title: "User Research",
         subtitle: (
@@ -52,17 +48,31 @@ const CARDS = [
                 This helped establish a clear structure for both first-time users and advanced recruiters, ensuring the platform remained intuitive regardless of company size or hiring complexity.
             </>
         ),
-        slides: CASE_SCENARIO_SLIDES,
     },
 ];
 
 export default function UserResearch() {
+    const { theme } = useTheme();
     const [activeCard, setActiveCard] = useState(0);
+
+    const cards = useMemo(() => {
+        const suffix = theme === "light" ? "Light" : "";
+        return [
+            CARDS_META[0],
+            {
+                ...CARDS_META[1],
+                slides: [
+                    { image: `/assets/clichireCaseScenarios${suffix}.svg` },
+                    { image: `/assets/clichireCaseScenarios2${suffix}.svg` },
+                ],
+            },
+        ];
+    }, [theme]);
 
     return (
         <div className="user-research">
             <div className="user-research__inner">
-                {CARDS.map((card, index) => (
+                {cards.map((card, index) => (
                     <button
                         key={card.title}
                         type="button"
@@ -80,8 +90,8 @@ export default function UserResearch() {
                 ))}
             </div>
             <ClicHireSlide
-                key={activeCard}
-                slides={CARDS[activeCard].slides}
+                key={`${activeCard}-${theme}`}
+                slides={cards[activeCard].slides}
             />
         </div>
     );

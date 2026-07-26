@@ -46,7 +46,28 @@
             font-family: var(--font-playfair-display);
 
             &::before {
-                background: #1a1a1a;
+                background: var(--color-cta-fill);
+            }
+
+            [data-theme="light"] & {
+                color: #1a1a1a;
+                background: var(--color-cta-fill);
+
+                &::before {
+                    background: #ffffff;
+                }
+
+                & > img {
+                    filter: invert(1);
+                }
+
+                &:hover {
+                    color: #ffffff;
+
+                    & > img {
+                        filter: none;
+                    }
+                }
             }
         }
 

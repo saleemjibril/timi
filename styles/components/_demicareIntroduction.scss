@@ -25,7 +25,7 @@
             @extend %primary-button-corner;
             font-family: var(--font-playfair-display);
             &::before {
-                background: #282828;
+                background: var(--color-cta-fill);
             }
         }
     }

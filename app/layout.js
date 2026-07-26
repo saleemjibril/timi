@@ -1,9 +1,9 @@
 import "../styles/index.scss";
 import { Inter, Syne, Geist, Playfair_Display } from "next/font/google";
-import localFont from "next/font/local";
 import Header from "./components/header";
 import Footer from "./components/footer";
 import HashScroll from "./components/hashScroll";
+import ThemeProvider from "./components/themeProvider";
 
 export const metadata = {
   title: {
@@ -13,21 +13,6 @@ export const metadata = {
   description:
     "Product designer helping businesses move from idea to launch. Specializing in UX research, product strategy, and high-fidelity design across web and mobile.",
 };
-
-// const silkFlower = localFont({
-//   src: "../public/assets/SilkFlower.woff2",
-//   subsets: ["latin"],
-//   display: "swap",
-//   variable: "--font-silkflower",
-// });
-
-// const durkWide = localFont({
-//   src: "../public/assets/DrukWideBold.ttf",
-//   weight: "200 800", // For variable fonts, specify the weight range
-//   subsets: ["latin"],
-//   display: "swap",
-//   variable: "--font-durkwide",
-// });
 
 const inter = Inter({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -56,18 +41,39 @@ const geist = Geist({
   variable: "--font-geist",
 });
 
+const themeInitScript = `
+(function () {
+  try {
+    var t = localStorage.getItem("theme");
+    if (t === "light" || t === "dark") {
+      document.documentElement.setAttribute("data-theme", t);
+    } else {
+      document.documentElement.setAttribute("data-theme", "dark");
+    }
+  } catch (e) {
+    document.documentElement.setAttribute("data-theme", "dark");
+  }
+})();
+`;
+
 export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`
        ${syne.variable} ${inter.variable} ${geist.variable} ${playfairDisplay.variable}`}
     >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+      </head>
       <body>
-        <HashScroll />
-        <Header />
-        {children}
-        <Footer />
+        <ThemeProvider>
+          <HashScroll />
+          <Header />
+          {children}
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

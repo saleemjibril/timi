@@ -3,14 +3,12 @@ import Link from "next/link";
 import { assetUrl } from "@/lib/assetUrl";
 
 export default function DemicareHero() {
+    const mockupUrl = assetUrl("/assets/demicareMockup.svg", { width: 2560 });
+
     return (
         <div
             className="demicare__hero"
-            style={{
-                backgroundImage: `url(${assetUrl("/assets/demicareMockup.svg", {
-                    width: 2560,
-                })})`,
-            }}
+            style={{ ["--demicare-hero-image"]: `url(${mockupUrl})` }}
         >
             <div className="demicare__hero__inner">
                 <Link href="/" className="demicare__hero__back" aria-label="Back">

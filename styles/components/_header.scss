@@ -1,9 +1,10 @@
 .header {
-  background: #1A1A1A;
+  background: var(--color-header-bg);
   width: 100%;
   font-family: var(--font-playfair-display);
   position: relative;
   z-index: 100;
+  transition: background-color 0.25s ease;
 
  &__inner {
   width: 100%;
@@ -14,6 +15,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  &__logo img {
+    filter: invert(var(--color-icon-invert));
+  }
 
   & > nav {
     display: flex;
@@ -31,7 +36,7 @@
       justify-content: center;
     }
 
-    & > button:not(.header__menu-toggle) {
+    & > button:not(.header__menu-toggle):not(.header__theme) {
       @extend %primary-button;
       margin-left: 12px;
       height: 40px;
@@ -47,22 +52,38 @@
     margin-right: 20px;
 
     &__item {
-      color: #737373;
+      color: var(--color-text-muted);
       text-decoration: none;
       transition: color 0.25s ease;
     }
 
     &__item--active {
-      color: #fff;
+      color: var(--color-text);
     }
 
     a:hover {
-      color: #fff;
+      color: var(--color-text);
       text-decoration: underline;
       text-underline-offset: 4px;
     }
   }
  }
+
+  &__theme {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 12px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    line-height: 0;
+
+    img {
+      filter: invert(var(--color-icon-invert));
+    }
+  }
 
   &__menu-toggle {
     display: none;
@@ -74,6 +95,10 @@
     background: transparent;
     cursor: pointer;
     line-height: 0;
+
+    img {
+      filter: invert(var(--color-icon-invert));
+    }
   }
 
   &__overlay {
@@ -98,10 +123,10 @@
     width: min(320px, 86vw);
     height: 100vh;
     height: 100dvh;
-    background: #1a1a1a;
+    background: var(--color-header-bg);
     padding: 24px 20px 40px;
     transform: translateX(100%);
-    transition: transform 0.35s ease;
+    transition: transform 0.35s ease, background-color 0.25s ease;
     z-index: 120;
     display: flex;
     flex-direction: column;
@@ -132,14 +157,14 @@
       gap: 28px;
 
       a {
-        color: #737373;
+        color: var(--color-text-muted);
         text-decoration: none;
         transition: color 0.25s ease;
         font-family: var(--font-playfair-display);
 
         &:hover,
         &.header__inner__links__item--active {
-          color: #fff;
+          color: var(--color-text);
         }
       }
     }

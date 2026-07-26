@@ -1,7 +1,8 @@
 .footer {
     margin-top: 186px;
-    background: #282828;
+    background: var(--color-footer-bg);
     overflow: hidden;
+    transition: background-color 0.25s ease;
 
     &__inner {
         position: relative;
@@ -14,8 +15,12 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            border-bottom: 1px solid #181818;
+            border-bottom: 1px solid var(--color-border-subtle);
             margin-bottom: 42px;
+
+            & > a img {
+                filter: invert(var(--color-icon-invert));
+            }
 
             &__social-group {
                 display: flex;
@@ -26,6 +31,14 @@
                     display: inline-flex;
                     line-height: 0;
                     transition: opacity 0.2s ease;
+                    background: #fafafa;
+                    border-radius: 21px;
+                    padding: 5px;
+
+                    img {
+                        // Glyphs are white; invert so they read on the light plate
+                        filter: invert(1);
+                    }
 
                     &:hover {
                         opacity: 0.7;
@@ -43,6 +56,7 @@
                 @extend %title-48;
                 font-weight: 500;
                 margin-bottom: 8px;
+                color: var(--color-text);
             }
 
             &__button {
@@ -59,7 +73,7 @@
             display: flex;
             flex-direction: column;
             gap: 16px;
-            color: #737373;
+            color: var(--color-text-muted);
 
             a, span {
                 color: inherit;
@@ -68,7 +82,7 @@
             }
 
             a:hover {
-                color: #fff;
+                color: var(--color-link-hover);
             }
         }
         }
@@ -76,8 +90,8 @@
 
         &__bg {
             color: transparent;
-            -webkit-text-stroke: 2px #1C1C1C;
-            text-stroke: 2px #1C1C1C;
+            -webkit-text-stroke: 2px var(--color-marquee-stroke);
+            text-stroke: 2px var(--color-marquee-stroke);
             font-size: 168px;
             font-weight: bold;
             // margin: 20px 0;

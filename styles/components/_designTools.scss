@@ -16,7 +16,7 @@
         line-height: 150%;
         text-align: right;
         text-transform: capitalize;
-        color: #FAFAFA;
+        color: var(--color-text-strong);
     }
 
     &__card2 {
@@ -37,7 +37,7 @@
             display: flex;
             align-items: flex-start;
             gap: 24px;
-            background: #1A1A1A;
+            background: var(--color-bg-elevated);
 
             &:nth-child(2) {
                 width: 640px;
@@ -68,14 +68,14 @@
                 font-size: 24px;
                 font-weight: 600;
                 line-height: 150%;
-                color: #FFFFFF;
+                color: var(--color-text);
             }
 
             &__subtitle {
                 font-size: 16px;
                 font-weight: 500;
                 line-height: 150%;
-                color: #737373;
+                color: var(--color-text-muted);
             }
         }
     }

@@ -27,7 +27,7 @@ export default function EazInvite(params) {
             "/assets/eazinviteIcongraphy.svg",
             "/assets/eazinviteColorScheme.svg",
             "/assets/eazinviteTypography.svg",
-            "/assets/eazinviteUIComponents.svg"
+            // "/assets/eazinviteUIComponents.svg"
           ]
         }
       />

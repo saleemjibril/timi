@@ -18,12 +18,34 @@
 
     & > button {
         @extend %primary-button-corner;
-                    font-family: var(--font-playfair-display);
-
-                    &::before {
-                        background: #1a1a1a;
-                    }
+        font-family: var(--font-playfair-display);
         margin-bottom: 74px;
+
+        &::before {
+            background: var(--color-bg-elevated);
+        }
+
+        // Light mode: light plate + black label at rest → dark plate + white on hover
+        [data-theme="light"] & {
+            color: #1a1a1a;
+            background: var(--color-cta-fill);
+
+            &::before {
+                background: #fafafa;
+            }
+
+            & > img {
+                filter: invert(1);
+            }
+
+            &:hover {
+                color: #ffffff;
+
+                & > img {
+                    filter: none;
+                }
+            }
+        }
     }
 
     &__grid {

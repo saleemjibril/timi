@@ -1,54 +1,71 @@
 // Design Exploration - Fixed Animation
 "use client";
 import Image from "next/image";
-import Link from "next/link";
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { useTheme } from "./themeProvider";
+
+const MOBILE_EXPLORATIONS = Array.from(
+  { length: 27 },
+  (_, i) => `/assets/exp${i + 1}.svg`
+);
+
+const LANDING_COUNT = 15;
 
 export default function DesignExploration() {
+  const { theme } = useTheme();
   const mobileGridRef = useRef(null);
   const landingGridRef = useRef(null);
 
-  useGSAP(() => {
-    // Mobile grid animation - 27 unique images, so move by exactly 27 image widths + gaps
-    if (mobileGridRef.current) {
-      const mobileFirstImg = mobileGridRef.current.querySelector("img");
-      const mobileImageWidth = mobileFirstImg
-        ? mobileFirstImg.offsetWidth
-        : 480; // Measured so the loop stays seamless at any screen size
-      const mobileGap = 24; // Gap between images
-      const mobileUniqueImages = 27; // Number of unique images
-      const mobileDistanceToMove =
-        mobileUniqueImages * (mobileImageWidth + mobileGap);
+  const landingSuffix = theme === "light" ? "Light" : "Dark";
+  const landingPages = Array.from(
+    { length: LANDING_COUNT },
+    (_, i) => `/assets/land${i + 1}${landingSuffix}.svg`
+  );
 
-      gsap.to(mobileGridRef.current, {
-        x: -mobileDistanceToMove, // Move by exact distance of unique images
-        duration: 60, // Changed from 30 to 60 (2x slower)
-        ease: "none",
-        repeat: -1,
-      });
-    }
+  useGSAP(
+    () => {
+      // Mobile grid animation - 27 unique images, so move by exactly 27 image widths + gaps
+      if (mobileGridRef.current) {
+        const mobileFirstImg = mobileGridRef.current.querySelector("img");
+        const mobileImageWidth = mobileFirstImg
+          ? mobileFirstImg.offsetWidth
+          : 480; // Measured so the loop stays seamless at any screen size
+        const mobileGap = 24; // Gap between images
+        const mobileUniqueImages = 27; // Number of unique images
+        const mobileDistanceToMove =
+          mobileUniqueImages * (mobileImageWidth + mobileGap);
 
-    // Landing page grid animation - 20 unique images, so move by exactly 20 image widths + gaps
-    if (landingGridRef.current) {
-      const landingFirstImg = landingGridRef.current.querySelector("img");
-      const landingImageWidth = landingFirstImg
-        ? landingFirstImg.offsetWidth
-        : 891; // Measured so the loop stays seamless at any screen size
-      const landingGap = 24; // Gap between images
-      const landingUniqueImages = 20; // Number of unique images
-      const landingDistanceToMove =
-        landingUniqueImages * (landingImageWidth + landingGap);
+        gsap.to(mobileGridRef.current, {
+          x: -mobileDistanceToMove, // Move by exact distance of unique images
+          duration: 60, // Changed from 30 to 60 (2x slower)
+          ease: "none",
+          repeat: -1,
+        });
+      }
 
-      gsap.to(landingGridRef.current, {
-        x: -landingDistanceToMove, // Move by exact distance of unique images
-        duration: 70, // Changed from 35 to 70 (2x slower)
-        ease: "none",
-        repeat: -1,
-      });
-    }
-  });
+      // Landing page grid animation - 15 unique images
+      if (landingGridRef.current) {
+        gsap.set(landingGridRef.current, { x: 0 });
+        const landingFirstImg = landingGridRef.current.querySelector("img");
+        const landingImageWidth = landingFirstImg
+          ? landingFirstImg.offsetWidth
+          : 891; // Measured so the loop stays seamless at any screen size
+        const landingGap = 24; // Gap between images
+        const landingDistanceToMove =
+          LANDING_COUNT * (landingImageWidth + landingGap);
+
+        gsap.to(landingGridRef.current, {
+          x: -landingDistanceToMove, // Move by exact distance of unique images
+          duration: 70, // Changed from 35 to 70 (2x slower)
+          ease: "none",
+          repeat: -1,
+        });
+      }
+    },
+    { dependencies: [theme] }
+  );
 
   return (
     <div className="home__design-exploration">
@@ -62,61 +79,15 @@ export default function DesignExploration() {
         </div>
         <div className="home__design-exploration__inner__grid">
           <div ref={mobileGridRef} className="marquee-container">
-            <Image src="/assets/exploration1.svg" width={480} height={520} />
-            <Image src="/assets/exploration2.svg" width={480} height={520} />
-            <Image src="/assets/exploration3.svg" width={480} height={520} />
-            <Image src="/assets/exploration4.svg" width={480} height={520} />
-            <Image src="/assets/exploration5.svg" width={480} height={520} />
-            <Image src="/assets/exploration6.svg" width={480} height={520} />
-            <Image src="/assets/exploration7.svg" width={480} height={520} />
-            <Image src="/assets/exploration8.svg" width={480} height={520} />
-            <Image src="/assets/exploration9.svg" width={480} height={520} />
-            <Image src="/assets/exploration10.svg" width={480} height={520} />
-            <Image src="/assets/exploration11.svg" width={480} height={520} />
-            <Image src="/assets/exploration12.svg" width={480} height={520} />
-            <Image src="/assets/exploration13.svg" width={480} height={520} />
-            <Image src="/assets/exploration14.svg" width={480} height={520} />
-            <Image src="/assets/exploration15.svg" width={480} height={520} />
-            <Image src="/assets/exploration16.svg" width={480} height={520} />
-            <Image src="/assets/exploration17.svg" width={480} height={520} />
-            <Image src="/assets/exploration18.svg" width={480} height={520} />
-            <Image src="/assets/exploration19.svg" width={480} height={520} />
-            <Image src="/assets/exploration20.svg" width={480} height={520} />
-            <Image src="/assets/exploration21.svg" width={480} height={520} />
-            <Image src="/assets/exploration22.svg" width={480} height={520} />
-            <Image src="/assets/exploration23.svg" width={480} height={520} />
-            <Image src="/assets/exploration24.svg" width={480} height={520} />
-            <Image src="/assets/exploration25.svg" width={480} height={520} />
-            <Image src="/assets/exploration26.svg" width={480} height={520} />
-            <Image src="/assets/exploration27.svg" width={480} height={520} />
-            {/* Duplicate for seamless loop */}
-            <Image src="/assets/exploration1.svg" width={480} height={520} />
-            <Image src="/assets/exploration2.svg" width={480} height={520} />
-            <Image src="/assets/exploration3.svg" width={480} height={520} />
-            <Image src="/assets/exploration4.svg" width={480} height={520} />
-            <Image src="/assets/exploration5.svg" width={480} height={520} />
-            <Image src="/assets/exploration6.svg" width={480} height={520} />
-            <Image src="/assets/exploration7.svg" width={480} height={520} />
-            <Image src="/assets/exploration8.svg" width={480} height={520} />
-            <Image src="/assets/exploration9.svg" width={480} height={520} />
-            <Image src="/assets/exploration10.svg" width={480} height={520} />
-            <Image src="/assets/exploration11.svg" width={480} height={520} />
-            <Image src="/assets/exploration12.svg" width={480} height={520} />
-            <Image src="/assets/exploration13.svg" width={480} height={520} />
-            <Image src="/assets/exploration14.svg" width={480} height={520} />
-            <Image src="/assets/exploration15.svg" width={480} height={520} />
-            <Image src="/assets/exploration16.svg" width={480} height={520} />
-            <Image src="/assets/exploration17.svg" width={480} height={520} />
-            <Image src="/assets/exploration18.svg" width={480} height={520} />
-            <Image src="/assets/exploration19.svg" width={480} height={520} />
-            <Image src="/assets/exploration20.svg" width={480} height={520} />
-            <Image src="/assets/exploration21.svg" width={480} height={520} />
-            <Image src="/assets/exploration22.svg" width={480} height={520} />
-            <Image src="/assets/exploration23.svg" width={480} height={520} />
-            <Image src="/assets/exploration24.svg" width={480} height={520} />
-            <Image src="/assets/exploration25.svg" width={480} height={520} />
-            <Image src="/assets/exploration26.svg" width={480} height={520} />
-            <Image src="/assets/exploration27.svg" width={480} height={520} />
+            {[...MOBILE_EXPLORATIONS, ...MOBILE_EXPLORATIONS].map((src, i) => (
+              <Image
+                key={`${src}-${i}`}
+                src={src}
+                width={480}
+                height={450}
+                alt=""
+              />
+            ))}
           </div>
         </div>
 
@@ -125,37 +96,15 @@ export default function DesignExploration() {
         </div>
         <div className="home__design-exploration__inner__grid-mini">
           <div ref={landingGridRef} className="marquee-container">
-            <Image src="/assets/landingpages1.svg" width={891} height={586} />
-            <Image src="/assets/landingpages2.svg" width={891} height={586} />
-            <Image src="/assets/landingpages3.svg" width={891} height={586} />
-            <Image src="/assets/landingpages4.svg" width={891} height={586} />
-            <Image src="/assets/landingpages5.svg" width={891} height={586} />
-            <Image src="/assets/landingpages6.svg" width={891} height={586} />
-            <Image src="/assets/landingpages7.svg" width={891} height={586} />
-            <Image src="/assets/landingpages8.svg" width={891} height={586} />
-            <Image src="/assets/landingpages9.svg" width={891} height={586} />
-            <Image src="/assets/landingpages10.svg" width={891} height={586} />
-            <Image src="/assets/landingpages11.svg" width={891} height={586} />
-            <Image src="/assets/landingpages12.svg" width={891} height={586} />
-            <Image src="/assets/landingpages13.svg" width={891} height={586} />
-            <Image src="/assets/landingpages14.svg" width={891} height={586} />
-            <Image src="/assets/landingpages15.svg" width={891} height={586} />
-            {/* Duplicate for seamless loop */}
-            <Image src="/assets/landingpages1.svg" width={891} height={586} />
-            <Image src="/assets/landingpages2.svg" width={891} height={586} />
-            <Image src="/assets/landingpages3.svg" width={891} height={586} />
-            <Image src="/assets/landingpages4.svg" width={891} height={586} />
-            <Image src="/assets/landingpages5.svg" width={891} height={586} />
-            <Image src="/assets/landingpages6.svg" width={891} height={586} />
-            <Image src="/assets/landingpages7.svg" width={891} height={586} />
-            <Image src="/assets/landingpages8.svg" width={891} height={586} />
-            <Image src="/assets/landingpages9.svg" width={891} height={586} />
-            <Image src="/assets/landingpages10.svg" width={891} height={586} />
-            <Image src="/assets/landingpages11.svg" width={891} height={586} />
-            <Image src="/assets/landingpages12.svg" width={891} height={586} />
-            <Image src="/assets/landingpages13.svg" width={891} height={586} />
-            <Image src="/assets/landingpages14.svg" width={891} height={586} />
-            <Image src="/assets/landingpages15.svg" width={891} height={586} />
+            {[...landingPages, ...landingPages].map((src, i) => (
+              <Image
+                key={`${src}-${i}`}
+                src={src}
+                width={891}
+                height={586}
+                alt=""
+              />
+            ))}
           </div>
         </div>
       </div>

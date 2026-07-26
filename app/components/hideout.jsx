@@ -3,38 +3,41 @@ import Image from "next/image";
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { useTheme } from "./themeProvider";
 
 const SOCIALS = [
   {
-    src: "/assets/instagram.svg",
+    src: "/assets/instagram",
     href: "https://www.instagram.com/sisi_lolade",
     label: "Instagram",
   },
   {
-    src: "/assets/tiktok.svg",
+    src: "/assets/tiktok",
     href: "https://www.tiktok.com/@ololadeuxdesigner",
     label: "TikTok",
   },
   {
-    src: "/assets/behance.svg",
+    src: "/assets/behance",
     href: null,
     label: "Behance",
   },
   {
-    src: "/assets/x.svg",
+    src: "/assets/x",
     href: "https://x.com/ololadedesign",
     label: "Twitter",
   },
   {
-    src: "/assets/linkedin.svg",
+    src: "/assets/linkedin",
     href: "https://www.linkedin.com/in/oluwatimilehin-adekoye",
     label: "LinkedIn",
   },
 ];
 
 export default function Hideout() {
+  const { theme } = useTheme();
   const groupRef = useRef(null);
   const itemRefs = useRef([]);
+  const suffix = theme === "light" ? "Light" : "";
 
   useGSAP(
     () => {
@@ -102,7 +105,7 @@ export default function Hideout() {
         {SOCIALS.map((social, index) => {
           const image = (
             <Image
-              src={social.src}
+              src={`${social.src}${suffix}.svg`}
               width={905}
               height={268}
               alt={social.label}
@@ -134,7 +137,12 @@ export default function Hideout() {
           );
         })}
       </div>
-      <Image src="/assets/hideout2.png" width={407} height={170} alt="" />
+      <Image
+        src={`/assets/hideout2${suffix}.png`}
+        width={407}
+        height={170}
+        alt=""
+      />
     </section>
   );
 }

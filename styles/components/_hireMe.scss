@@ -1,5 +1,5 @@
 .hire-me {
-    background: #282828;
+    background: var(--color-bg-muted);
 
     &__inner {
         width: 100%;
@@ -50,7 +50,29 @@
                 padding: 0 22px;
 
                 &::before {
-                    background: #1a1a1a !important;
+                    background: var(--color-bg-elevated) !important;
+                }
+
+                // Light mode: light plate + black label at rest → dark plate + white on hover
+                [data-theme="light"] & {
+                    color: #1a1a1a;
+                    background: var(--color-cta-fill);
+
+                    &::before {
+                        background: #fafafa !important;
+                    }
+
+                    & > img {
+                        filter: invert(1);
+                    }
+
+                    &:hover {
+                        color: #ffffff;
+
+                        & > img {
+                            filter: none;
+                        }
+                    }
                 }
             }
         }

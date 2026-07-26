@@ -84,6 +84,7 @@ From layout consistency to micro-interactions, I focused on refining the user jo
             <Image src="/assets/recruit7.svg" width={378.6700134277344} height={245.10537719726562} />
             </div>
         </div>
+        {activeTab === "Enterprise View" && (
         <div className="sketching__view">
             <div className="sketching__view__title">Client management</div>
             <div className="sketching__view__subtitle">
@@ -91,15 +92,16 @@ From layout consistency to micro-interactions, I focused on refining the user jo
             </div>
 
             <div className="sketching__view__grid">
-            <Image src="/assets/client1.svg" width={378.6700134277344} height={269.2764587402344} />
-            <Image src="/assets/client2.svg" width={378.6700134277344} height={269.2764587402344} />
-            <Image src="/assets/client3.svg" width={378.6700134277344} height={269.2764587402344} />
-            <Image src="/assets/client4.svg" width={378.6700134277344} height={269.2764587402344} />
-            <Image src="/assets/client5.svg" width={378.6700134277344} height={269.2764587402344} />
-            <Image src="/assets/client6.svg" width={378.6700134277344} height={245.10537719726562} />
+            <Image src="/assets/clientMgmt1.svg" width={378.6700134277344} height={269.2764587402344} />
+            <Image src="/assets/clientMgmt2.svg" width={378.6700134277344} height={269.2764587402344} />
+            <Image src="/assets/clientMgmt3.svg" width={378.6700134277344} height={269.2764587402344} />
+            <Image src="/assets/clientMgmt4.svg" width={378.6700134277344} height={269.2764587402344} />
+            <Image src="/assets/clientMgmt5.svg" width={378.6700134277344} height={269.2764587402344} />
+            <Image src="/assets/clientMgmt6.svg" width={378.6700134277344} height={245.10537719726562} />
             
             </div>
         </div>
+        )}
         <div className="sketching__view">
             <div className="sketching__view__title">Team collaboration</div>
             <div className="sketching__view__subtitle">

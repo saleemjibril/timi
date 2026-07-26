@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { scrollToSection } from "@/lib/scrollToSection";
+import { useTheme } from "./themeProvider";
 
 const NAV_LINKS = [
   { href: "/#projects", id: "projects", label: "Projects" },
@@ -16,6 +17,7 @@ const RESUME_HREF =
 
 export default function Header() {
   const pathname = usePathname();
+  const { theme, toggleTheme } = useTheme();
   const [activeId, setActiveId] = useState(null);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -140,13 +142,21 @@ export default function Header() {
               Resume
             </a>
           </div>
-          <Image
+          <button
+            type="button"
             className="header__theme"
-            src="/assets/icons/lightMode.svg"
-            width={24}
-            height={24}
-            alt=""
-          />
+            aria-label={
+              theme === "light" ? "Switch to dark mode" : "Switch to light mode"
+            }
+            onClick={toggleTheme}
+          >
+            <Image
+              src="/assets/icons/lightMode.svg"
+              width={24}
+              height={24}
+              alt=""
+            />
+          </button>
           <Link
             href="/contact"
             className={

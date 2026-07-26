@@ -4,13 +4,16 @@ import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useTheme } from "./themeProvider";
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Me() {
+  const { theme } = useTheme();
   const cardRef = useRef(null);
   const marqueeRef = useRef(null);
+  const meSuffix = theme === "light" ? "Light" : "";
 
   useGSAP(() => {
     let marqueeAnimation;
@@ -98,8 +101,18 @@ export default function Me() {
   return (
     <div className="home__me">
       <div className="home__me__grid">
-        <Image src="/assets/me1.svg" width={644} height={400} />
-        <Image src="/assets/me2.svg" width={644} height={400} />
+        <Image
+          src={`/assets/me1${meSuffix}.svg`}
+          width={644}
+          height={400}
+          alt=""
+        />
+        <Image
+          src={`/assets/me2${meSuffix}.svg`}
+          width={644}
+          height={400}
+          alt=""
+        />
       </div>
 
       <div className="home__me__title" id="experience">
@@ -203,38 +216,60 @@ export default function Me() {
       <div className="home__me__soft-grid-cover">
         <div className="home__me__soft-grid">
           <div className="home__me__soft-card">
-            <Image src="/assets/icons/problem.svg" width={42} height={42} />
+            <Image
+              src={`/assets/icons/problem${meSuffix}.svg`}
+              width={42}
+              height={42}
+              alt=""
+            />
             <div className="home__me__soft-card__title">Problem solving</div>
           </div>
           <div className="home__me__soft-card">
-            <Image src="/assets/icons/time.svg" width={42} height={42} />
+            <Image
+              src={`/assets/icons/time${meSuffix}.svg`}
+              width={42}
+              height={42}
+              alt=""
+            />
             <div className="home__me__soft-card__title">Time management</div>
           </div>
           <div className="home__me__soft-card">
-            <Image src="/assets/icons/empathy.svg" width={42} height={42} />
+            <Image
+              src={`/assets/icons/empathy${meSuffix}.svg`}
+              width={42}
+              height={42}
+              alt=""
+            />
             <div className="home__me__soft-card__title">Empathy</div>
           </div>
           <div className="home__me__soft-card">
             <Image
-              src="/assets/icons/collaboration.svg"
+              src={`/assets/icons/collaboration${meSuffix}.svg`}
               width={42}
               height={42}
+              alt=""
             />
             <div className="home__me__soft-card__title">Collaboration</div>
           </div>
         </div>
         <div className="home__me__soft-grid-mini">
           <div className="home__me__soft-card">
-            <Image src="/assets/icons/stakeholder.svg" width={42} height={42} />
+            <Image
+              src={`/assets/icons/stakeholder${meSuffix}.svg`}
+              width={42}
+              height={42}
+              alt=""
+            />
             <div className="home__me__soft-card__title">
               Stakeholder management
             </div>
           </div>
           <div className="home__me__soft-card">
             <Image
-              src="/assets/icons/communication.svg"
+              src={`/assets/icons/communication${meSuffix}.svg`}
               width={42}
               height={42}
+              alt=""
             />
             <div className="home__me__soft-card__title">
               Effective communication

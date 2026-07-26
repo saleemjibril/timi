@@ -45,7 +45,6 @@ export default function Demicare() {
         subtitle: "Positive feedback"
       }
     ]}
-    bg={"#000000"}
     />
 
     <DemicareWhatsNext />

@@ -1,6 +1,6 @@
 .home__work-together {
     width: 100%;
-    background: #1a1a1a;
+    background: var(--color-bg-elevated);
   
     &__inner {
         width: 100%;
@@ -31,7 +31,7 @@
     
         &__card {
             padding: 48px 32px;
-            background: #000000;
+            background: var(--color-bg-card);
             border-radius: 15px;
     
             &__number {
@@ -47,7 +47,7 @@
             }
     
             &__subtitle {
-                color: #737373;
+                color: var(--color-text-muted);
                 line-height: 140%;
                 width: 100%;
                 max-width: 65ch;

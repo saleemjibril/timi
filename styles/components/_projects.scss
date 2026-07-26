@@ -33,7 +33,7 @@
 
             &__button {
                 border-radius: 26px;
-                background: #333333;
+                background: var(--color-project-cta);
                 padding: 4px 4px;
                 width: fit-content;
                 height: 60px;
@@ -47,7 +47,7 @@
                     left: 50%;
                     transform: translate(-50%, -50%);
                     border-radius: 40px;
-                    background: #333333;
+                    background: var(--color-project-cta);
                     width: 200px;
                     height: 64px;
                     display: block;

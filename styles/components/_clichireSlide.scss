@@ -27,7 +27,7 @@
         justify-content: center;
 
         &--full {
-            background: #1c1c1c;
+            background: var(--color-marquee-stroke);
             align-items: stretch;
             justify-content: stretch;
             padding: 0;
@@ -46,7 +46,7 @@
         width: 100%;
         max-width: 506px;
         border-radius: 15px;
-        background: var(--Background, #282828);
+        background: var(--color-bg-muted);
         padding: 32px;
         line-height: 140%;
 
@@ -58,13 +58,13 @@
         &__name {
             @extend %title-16;
             font-weight: 600;
-            color: #FFF;
+            color: var(--color-text);
         }
 
         &__role {
             @extend %title-16;
             font-weight: 400;
-            color: #A3A3A3;
+            color: var(--color-text-muted);
         }
     }
 
@@ -82,7 +82,7 @@
         width: 12px;
         height: 12px;
         border-radius: 50%;
-        background-color: #fff;
+        background-color: var(--color-text);
         opacity: 0.5;
         cursor: pointer;
         transition: all 0.3s ease;

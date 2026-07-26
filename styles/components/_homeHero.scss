@@ -77,11 +77,11 @@
         &__card2 {
             & > div {
                 @extend %title-20;
-            color: #737373;
+            color: var(--color-text-muted);
             margin-bottom: 16px;
 
             & > span {
-                color: #FFF;
+                color: var(--color-text);
             }
             }
 
@@ -113,8 +113,8 @@
 
     &__bg {
         color: transparent;
-        -webkit-text-stroke: 2px gray;
-        text-stroke: 2px gray;
+        -webkit-text-stroke: 2px var(--color-marquee-stroke);
+        text-stroke: 2px var(--color-marquee-stroke);
         font-size: 168px;
         font-weight: bold;
         margin: 20px 0;
